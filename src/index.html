@@ -86,7 +86,8 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,.35) 48%,rgba(11,11,11,0) 70%),linear-gradient(0deg,var(--bg) 0%,rgba(11,11,11,0) 38%)}
 .hero .wrap{padding-block:calc(var(--topo) + 3rem) clamp(3rem,7vw,5.5rem)}
 .hero-txt{max-width:62rem}
-.hero h1{color:var(--amarelo);font-weight:500}
+.hero h1{color:var(--texto);font-weight:300}
+.hero h1 span+span{color:var(--amarelo);font-weight:500}
 .hero h1 span{display:block}
 .hero .lead{margin-top:1.6rem;max-width:60rem;color:rgba(244,242,236,.8)}
 .acoes{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.4rem}
@@ -284,7 +285,7 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .hero::after{background:linear-gradient(180deg,rgba(11,11,11,.9) 0%,rgba(11,11,11,.35) 20%,rgba(11,11,11,0) 40%,rgba(11,11,11,0) 55%,rgba(11,11,11,.7) 74%,var(--bg) 94%)}
   .hero .wrap{display:flex;padding-block:calc(var(--topo) + 1.4rem) 1.6rem}
   .hero-txt{display:flex;flex-direction:column;width:100%;margin-inline:auto}
-  .hero h1{font-size:calc((100vw - 2.5rem) / 10.2);white-space:nowrap}
+  .hero h1{font-size:calc((100vw - 2.5rem) / 10.5);white-space:nowrap}
   .hero .lead{margin:auto auto 0;font-size:.94rem;line-height:1.55;max-width:30rem}
   .hero .acoes{margin-top:1.3rem}
   .acoes{flex-direction:column;align-items:stretch;max-width:420px;margin-inline:auto}
@@ -380,7 +381,7 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
     </div>
     <div class="wrap">
       <div class="hero-txt">
-        <h1 id="h-hero"><span>Antes de você falar,</span> <span>sua imagem já falou</span></h1>
+        <h1 id="h-hero"><span>Antes de você falar,</span> <span>sua imagem já falou.</span></h1>
         <p class="lead">Visagismo masculino com método próprio: entendemos seu rosto, sua rotina e como você quer ser visto antes de pegar a tesoura. São 4 unidades em São Paulo e Uberlândia.</p>
         <div class="acoes" id="acoes-hero">
           <a class="btn btn-am" href="obrigado.html?c=hero"><!--WA-->Agendar minha experiência</a>
