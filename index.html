@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
+<title>Marco Barbearia | Visagismo e imagem masculina</title>
+<meta name="description" content="Visagismo masculino com método próprio. Corte, barba, sobrancelha e projeto de imagem em 4 unidades, em São Paulo e Uberlândia. Agende pelo WhatsApp.">
+<meta name="theme-color" content="#0b0b0b">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Marco Barbearia | Visagismo e imagem masculina">
+<meta property="og:description" content="Especialistas em imagem masculina. 4 unidades em São Paulo e Uberlândia.">
+<meta property="og:image" content="/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/poppins-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/poppins-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" href="/assets/img/hero-salao-vertical.webp" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="/assets/img/hero-salao.webp" media="(min-width: 900px)" fetchpriority="high">
+<style>
+@font-face{font-family:Poppins;src:url(/assets/fonts/poppins-300.woff2) format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:Poppins;src:url(/assets/fonts/poppins-400.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Poppins;src:url(/assets/fonts/poppins-500.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Poppins;src:url(/assets/fonts/poppins-600.woff2) format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Poppins Reserva';src:local('Arial');size-adjust:112.5%;ascent-override:93%;descent-override:31%;line-gap-override:9%}
+
+:root{
+  --bg:#0b0b0b; --bg-2:#131313; --bg-3:#1b1b1b; --linha:rgba(255,255,255,.1);
+  --amarelo:#feed00; --amarelo-2:#fff36b; --tinta:#111;
+  --texto:#f4f2ec; --suave:rgba(244,242,236,.64);
+  --fonte:Poppins,'Poppins Reserva',Arial,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gut:clamp(1.25rem,5vw,3rem); --topo:76px; --r:22px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--topo)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--texto);font:400 1rem/1.65 var(--fonte);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg,video,iframe{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,ul,ol,figure,blockquote,dialog{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+[hidden]{display:none!important}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.wrap{width:min(1280px,100% - 2*var(--gut));margin-inline:auto}
+h1,h2{font-weight:300;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6vw,6.2rem);line-height:1.02}
+h2{font-size:clamp(2.1rem,4.4vw,4.4rem);line-height:1.05}
+h1 b,h2 b{font-weight:500;color:var(--amarelo)}
+.lead{font-weight:300;font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.6;color:var(--suave)}
+:focus-visible{outline:2px solid var(--amarelo);outline-offset:3px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;padding:1.05em 1.65em;border-radius:999px;font:500 .98rem/1 var(--fonte);white-space:nowrap;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease),transform .35s var(--ease)}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn:active{transform:scale(.98)}
+.btn-am{background:var(--amarelo);color:var(--tinta)}
+.btn-am:hover{background:var(--amarelo-2)}
+.btn-vidro{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.05);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.btn-vidro:hover{border-color:rgba(255,255,255,.65)}
+.btn-tinta{background:var(--tinta);color:var(--amarelo)}
+.btn-tinta:hover{background:#262626}
+
+/* topo */
+.topo{position:fixed;inset:0 0 auto;z-index:60;height:var(--topo);border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
+.topo.solido{background:rgba(11,11,11,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-color:var(--linha)}
+.topo .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.marca{height:54px;width:auto}
+.nav{display:flex;gap:.4rem}
+.nav a{padding:.5em 1.05em;border:1px solid var(--linha);border-radius:999px;font-size:.88rem;color:var(--suave);transition:color .3s,border-color .3s}
+.nav a:hover{color:var(--texto);border-color:rgba(255,255,255,.4)}
+.topo .btn{padding:.8em 1.25em;font-size:.9rem}
+@media (max-width:1023px){.nav{display:none}}
+
+/* hero com o espelho */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-foto{position:absolute;inset:0;z-index:-1}
+.hero-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-foto .base{filter:grayscale(1) brightness(.38) contrast(1.08)}
+.lente{position:absolute;inset:0;clip-path:circle(var(--r,0px) at var(--x,72%) var(--y,46%));will-change:clip-path}
+.lente img{filter:saturate(1.08) brightness(1.04)}
+.anel{position:absolute;left:var(--x,72%);top:var(--y,46%);width:calc(var(--r,0px)*2);height:calc(var(--r,0px)*2);transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--amarelo);box-shadow:0 0 0 6px rgba(254,237,0,.08),0 0 60px rgba(254,237,0,.35),inset 0 0 50px rgba(254,237,0,.22);pointer-events:none;will-change:left,top}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,.35) 48%,rgba(11,11,11,0) 70%),linear-gradient(0deg,var(--bg) 0%,rgba(11,11,11,0) 38%)}
+.hero .wrap{padding-block:calc(var(--topo) + 3rem) clamp(3rem,7vw,5.5rem)}
+.hero-txt{max-width:44rem}
+.hero .lead{margin-top:1.6rem;max-width:36rem;color:rgba(244,242,236,.78)}
+.acoes{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.4rem}
+
+/* números */
+.numeros{border-block:1px solid var(--linha)}
+.numeros .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.num{padding:2.2rem 1.2rem;border-left:1px solid var(--linha)}
+.num:first-child{border-left:0;padding-left:0}
+.num b{display:block;font-weight:300;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1;letter-spacing:-.03em;color:var(--texto)}
+.num b i{font-style:normal;color:var(--amarelo)}
+.num>span{display:block;margin-top:.6rem;color:var(--suave);font-size:.95rem;overflow-wrap:anywhere}
+
+/* faixa de nomes */
+.nomes{padding-block:clamp(2.4rem,5vw,3.6rem);overflow:hidden}
+.faixa{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.trilho{display:flex;width:max-content;animation:corre var(--dur,60s) linear infinite;animation-play-state:paused}
+.faixa.roda .trilho{animation-play-state:running}
+.faixa.volta .trilho{animation-direction:reverse}
+@keyframes corre{to{transform:translate3d(-50%,0,0)}}
+.nomes .trilho span{display:inline-flex;align-items:center;gap:clamp(1rem,2.5vw,2.2rem);margin-right:clamp(1rem,2.5vw,2.2rem);font-weight:300;font-size:clamp(1.8rem,4.4vw,4rem);letter-spacing:-.02em;white-space:nowrap;color:rgba(244,242,236,.88)}
+.nomes .trilho span::after{content:"";width:.32em;height:.32em;border-radius:50%;background:var(--amarelo)}
+
+/* clientes: galeria que corre de lado */
+.clientes{position:relative}
+.clientes-cab{display:flex;justify-content:space-between;align-items:end;gap:2rem;padding-top:clamp(4rem,8vw,6.5rem)}
+.clientes-cab .lead{max-width:28rem}
+.palco{position:relative}
+.palco-fixo{position:sticky;top:0;height:100svh;display:flex;align-items:center;overflow:hidden}
+.fila{display:flex;gap:1.2rem;padding-inline:var(--gut);will-change:transform}
+.cartao{position:relative;flex:none;width:clamp(270px,25vw,380px);aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--bg-3);text-align:left;isolation:isolate}
+.cartao img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .6s var(--ease);filter:grayscale(.35)}
+.cartao:hover img{transform:scale(1.05);filter:none}
+.cartao::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,0) 55%);z-index:0}
+.cartao .quem{position:absolute;left:1.2rem;right:1.2rem;bottom:1.15rem;z-index:1}
+.cartao .quem b{display:block;font-weight:500;font-size:1.25rem;line-height:1.2}
+.cartao .quem span{display:block;font-size:.88rem;color:var(--suave);margin-top:.2rem}
+.play{position:absolute;top:1rem;right:1rem;z-index:1;width:46px;height:46px;border-radius:50%;background:var(--amarelo);color:var(--tinta);display:grid;place-items:center;transition:transform .4s var(--ease)}
+.play svg{width:16px;height:16px;margin-left:2px}
+.cartao:hover .play{transform:scale(1.1)}
+.cartao.texto{background:var(--bg-2);border:1px solid var(--linha);display:flex;flex-direction:column;justify-content:flex-end;padding:1.3rem}
+.cartao.texto::after{display:none}
+.cartao.texto .grande{font-weight:300;font-size:clamp(1.9rem,2.6vw,2.6rem);line-height:1.05;letter-spacing:-.02em}
+.cartao.texto .grande+span{color:var(--suave);font-size:.92rem;margin-top:.7rem}
+.cartao.texto .circ{position:absolute;top:-30%;right:-30%;width:80%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(254,237,0,.25);transition:transform 1s var(--ease)}
+.cartao.texto:hover .circ{transform:scale(1.15)}
+
+/* modal do vídeo */
+.modal{position:fixed;inset:0;margin:auto;width:min(420px,92vw);height:min(780px,88svh);padding:0;border:0;border-radius:18px;background:#000;overflow:hidden;color:var(--texto)}
+.modal::backdrop{background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.modal iframe{width:100%;height:100%;border:0;background:#fff}
+.fecha{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.7);display:grid;place-items:center}
+.fecha svg{width:16px;height:16px}
+
+/* método */
+.metodo{padding-block:clamp(5rem,9vw,8rem)}
+.metodo-cab{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:end}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:clamp(2.5rem,5vw,4rem);position:relative}
+.passos::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--linha)}
+.passos::after{content:"";position:absolute;left:0;top:27px;height:1px;width:100%;background:var(--amarelo);transform-origin:left;transform:scaleX(var(--p,1))}
+.passo .n{position:relative;z-index:1;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1px solid rgba(255,255,255,.25);font-weight:500;transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease)}
+.passo.on .n{background:var(--amarelo);color:var(--tinta);border-color:var(--amarelo)}
+.passo h3{font-weight:500;font-size:1.3rem;margin-top:1.3rem}
+.passo p{color:var(--suave);margin-top:.5rem;font-size:.97rem}
+
+/* formato de rosto */
+.rosto{margin-top:clamp(4rem,8vw,6rem);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;background:var(--bg-2);border:1px solid var(--linha);border-radius:32px;padding:clamp(1.5rem,4vw,3.5rem)}
+.rosto h3{font-weight:300;font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.1;letter-spacing:-.02em}
+.formatos{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.formatos button{padding:.55em 1.1em;border:1px solid var(--linha);border-radius:999px;font-size:.92rem;color:var(--suave);transition:all .3s var(--ease)}
+.formatos button:hover{color:var(--texto);border-color:rgba(255,255,255,.45)}
+.formatos button[aria-pressed="true"]{background:var(--amarelo);color:var(--tinta);border-color:var(--amarelo)}
+.dica-rosto{margin-top:1.6rem;min-height:7.5em}
+.dica-rosto b{display:block;font-weight:500;font-size:1.15rem;margin-bottom:.4rem}
+.dica-rosto p{color:var(--suave)}
+.nota-rosto{margin-top:1.4rem;font-size:.9rem;color:var(--suave);border-left:2px solid var(--amarelo);padding-left:.9rem}
+.desenho{position:relative;aspect-ratio:1;max-width:460px;width:100%;margin-inline:auto}
+.desenho svg{width:100%;height:100%;overflow:visible}
+.desenho .halo{fill:none;stroke:rgba(254,237,0,.18);stroke-width:1}
+.desenho .face{fill:rgba(254,237,0,.06);stroke:var(--amarelo);stroke-width:2.2;stroke-linejoin:round}
+.desenho .guia{stroke:rgba(244,242,236,.28);stroke-width:1;stroke-dasharray:4 6}
+.desenho .medida{stroke:var(--texto);stroke-width:1.2}
+.desenho text{fill:var(--suave);font:400 11px var(--fonte);letter-spacing:.06em}
+.desenho .traco{fill:none;stroke:rgba(244,242,236,.55);stroke-width:1.6;stroke-linecap:round}
+
+/* serviços empilhados */
+.servicos{padding-block:clamp(4rem,8vw,7rem)}
+.servicos .wrap>h2{max-width:13em}
+.pilha{margin-top:clamp(2.5rem,5vw,4rem);display:grid;gap:1.4rem}
+.serv{position:sticky;top:calc(var(--topo) + 1.5rem + var(--i)*14px);display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,4vw,3.5rem);align-items:center;min-height:clamp(180px,22vw,240px);padding:clamp(1.5rem,3.5vw,2.8rem);border-radius:28px;background:var(--bg-2);border:1px solid var(--linha);box-shadow:0 -20px 40px rgba(0,0,0,.4)}
+.serv:nth-child(even){background:var(--bg-3)}
+.serv .n{font-weight:300;font-size:clamp(2.4rem,5vw,4.4rem);color:var(--amarelo);line-height:1;letter-spacing:-.04em}
+.serv h3{font-weight:400;font-size:clamp(1.5rem,2.6vw,2.4rem);letter-spacing:-.015em;line-height:1.1}
+.serv p{color:var(--suave);margin-top:.6rem;max-width:34rem}
+.serv .circ{width:clamp(56px,7vw,88px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(254,237,0,.45);display:grid;place-items:center}
+.serv .circ svg{width:42%;height:42%;stroke:var(--amarelo);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* fundador */
+.fundador{position:relative;padding-block:clamp(4rem,8vw,7rem);border-top:1px solid var(--linha)}
+.fundador .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+/* o Marco sentado sobre o círculo amarelo do logo */
+.retrato{position:relative;height:min(82svh,740px);min-height:520px}
+.retrato::before{content:"";position:absolute;left:50%;bottom:6%;width:min(100%,520px);aspect-ratio:1;border-radius:50%;background:var(--amarelo);transform:translateX(-50%) scale(var(--s,1));transition:transform 1.2s var(--ease)}
+.js.rv-pronto .retrato:not(.in)::before{--s:.6}
+.retrato img{position:absolute;bottom:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%)}
+.fundador .lead{margin-top:1.4rem}
+.linha-tempo{margin-top:clamp(2.5rem,5vw,3.5rem);position:relative;padding-left:1.6rem}
+.linha-tempo::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--linha)}
+.linha-tempo::after{content:"";position:absolute;left:5px;top:6px;width:1px;height:calc(100% - 12px);background:var(--amarelo);transform-origin:top;transform:scaleY(var(--p,1))}
+.marco{position:relative;padding-block:.55rem}
+.marco::before{content:"";position:absolute;left:-1.6rem;top:.95rem;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid rgba(255,255,255,.35);transition:all .4s var(--ease)}
+.marco.on::before{background:var(--amarelo);border-color:var(--amarelo)}
+.marco b{font-weight:500;color:var(--amarelo);margin-right:.6rem;font-variant-numeric:tabular-nums}
+.marco span{color:var(--suave)}
+
+/* equipe */
+.equipe{padding-block:clamp(4rem,8vw,7rem);position:relative}
+.time{margin-top:clamp(2rem,4vw,3rem);border-top:1px solid var(--linha)}
+.pessoa{position:relative;display:grid;grid-template-columns:1.2fr 1fr auto;gap:1.5rem;align-items:center;padding-block:1.4rem;border-bottom:1px solid var(--linha);transition:padding .5s var(--ease)}
+.pessoa:hover{padding-left:1rem}
+.pessoa b{font-weight:300;font-size:clamp(1.6rem,3.4vw,3rem);letter-spacing:-.02em;line-height:1.1;transition:color .4s}
+.pessoa:hover b{color:var(--amarelo)}
+.pessoa span{color:var(--suave)}
+.pessoa em{font-style:normal;font-size:.9rem;color:var(--suave);border:1px solid var(--linha);border-radius:999px;padding:.4em .9em;transition:all .3s}
+.pessoa:hover em{color:var(--tinta);background:var(--amarelo);border-color:var(--amarelo)}
+.bolha{position:fixed;left:0;top:0;width:120px;height:120px;border-radius:50%;background:var(--amarelo);mix-blend-mode:difference;pointer-events:none;z-index:5;transform:translate(-50%,-50%) scale(0);transition:transform .45s var(--ease)}
+.bolha.on{transform:translate(-50%,-50%) scale(1)}
+
+/* unidades */
+.unidades{padding-block:clamp(4rem,8vw,7rem);border-top:1px solid var(--linha)}
+.lojas{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.loja{position:relative;display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:var(--bg-2);border:1px solid var(--linha);min-height:520px;isolation:isolate}
+.loja .foto{position:relative;height:250px;overflow:hidden}
+.loja .foto img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.loja:hover .foto img{transform:scale(1.06)}
+.loja .foto.vazia{display:grid;place-items:center;background:radial-gradient(circle at 70% 30%,rgba(254,237,0,.16),transparent 55%),var(--bg-3)}
+.loja .foto.vazia i{width:120px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(254,237,0,.5);box-shadow:0 0 50px rgba(254,237,0,.2),inset 0 0 30px rgba(254,237,0,.15)}
+.loja .info{padding:1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.loja .cidade{font-size:.82rem;color:var(--amarelo);letter-spacing:.04em}
+.loja h3{font-weight:500;font-size:1.4rem;line-height:1.15}
+.loja p{color:var(--suave);font-size:.95rem}
+.loja .acoes{margin-top:auto;padding-top:1rem;flex-direction:column;gap:.5rem}
+.loja .btn{width:100%;padding:.9em 1.2em;font-size:.92rem}
+.loja .mapa{text-align:center;font-size:.88rem;color:var(--suave);padding:.4rem}
+.loja .mapa:hover{color:var(--texto)}
+
+/* fechamento: o círculo amarelo toma a tela */
+.fim{position:relative;height:200svh}
+.fim-fixo{position:sticky;top:0;height:100svh;display:grid;place-items:center;overflow:hidden}
+.fim-circulo{position:absolute;inset:0;background:var(--amarelo);clip-path:circle(var(--c,150%) at 50% 50%)}
+.fim-txt{position:relative;text-align:center;color:var(--tinta);max-width:min(900px,100% - 2*var(--gut));opacity:var(--o,1)}
+.fim-txt h2 b{color:var(--tinta);font-weight:600}
+.fim-txt p{margin:1.4rem auto 0;max-width:34rem;font-size:clamp(1.05rem,1.4vw,1.25rem);color:rgba(17,17,17,.8)}
+.fim-txt .btn{margin-top:2.2rem}
+
+/* rodapé */
+.rodape{background:#070707;border-top:1px solid var(--linha);padding-block:4rem 2.2rem;color:var(--suave);font-size:.94rem}
+.rodape .wrap{display:grid;grid-template-columns:1.1fr 1.4fr 1fr 1.2fr;gap:2.4rem}
+.rodape .marca{height:96px}
+.rodape h3{margin:0 0 .9rem;color:var(--texto);font-weight:500;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.rodape li+li{margin-top:.7rem}
+.rodape li b{display:block;color:var(--texto);font-weight:500}
+.rodape a:hover{color:var(--texto)}
+.rodape .base{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;border-top:1px solid var(--linha);padding-top:1.6rem;margin-top:.6rem;font-size:.84rem}
+
+/* botão flutuante */
+.flutua{position:fixed;right:clamp(14px,2.5vw,28px);bottom:calc(clamp(14px,2.5vw,28px) + env(safe-area-inset-bottom));z-index:50;width:60px;height:60px;border-radius:50%;background:var(--amarelo);color:var(--tinta);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transform:scale(0);transition:transform .45s var(--ease)}
+.flutua.on{transform:scale(1)}
+.flutua svg{width:28px;height:28px}
+
+/* revelar */
+.js.rv-pronto .rv:not(.in){opacity:0;transform:translateY(30px)}
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+
+/* tablet e celular */
+@media (max-width:1100px){
+  .lojas{grid-template-columns:1fr 1fr}
+  .rodape .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:899px){
+  :root{--topo:66px}
+  .marca{height:44px}
+  .topo .btn{padding:.75em 1.05em;font-size:.86rem}
+  body{text-align:center}
+  .hero{min-height:100svh}
+  .hero::after{background:linear-gradient(0deg,var(--bg) 4%,rgba(11,11,11,.72) 42%,rgba(11,11,11,.15) 75%)}
+  .hero-txt{margin-inline:auto}
+  .hero .lead{margin-inline:auto}
+  .acoes{flex-direction:column;align-items:stretch;max-width:420px;margin-inline:auto}
+  .numeros .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .num{padding:1.6rem .8rem;border-left:0}
+  .num:nth-child(even){border-left:1px solid var(--linha)}
+  .num:nth-child(n+3){border-top:1px solid var(--linha)}
+  .num:first-child{padding-left:.8rem}
+  .clientes-cab{flex-direction:column;align-items:center}
+  .clientes-cab .lead{margin-inline:auto}
+  .palco{height:auto!important}
+  .palco-fixo{position:relative;height:auto;padding-block:2rem 1rem}
+  .fila{transform:none!important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-width:none}
+  .fila::-webkit-scrollbar{display:none}
+  .cartao{width:72vw;scroll-snap-align:center}
+  .metodo-cab{grid-template-columns:1fr;gap:1.2rem}
+  .metodo-cab .lead{margin-inline:auto}
+  .passos{grid-template-columns:1fr;gap:2rem}
+  .passos::before,.passos::after{display:none}
+  .passo .n{margin-inline:auto}
+  .passo p{max-width:30rem;margin-inline:auto}
+  .rosto{grid-template-columns:1fr;text-align:center}
+  .formatos{justify-content:center}
+  .nota-rosto{border-left:0;border-top:2px solid var(--amarelo);padding:.9rem 0 0}
+  .serv{grid-template-columns:1fr;text-align:center;justify-items:center;top:calc(var(--topo) + 1rem + var(--i)*10px)}
+  .serv .circ{display:none}
+  .serv p{margin-inline:auto}
+  .fundador .wrap{grid-template-columns:1fr}
+  .retrato{height:min(118vw,560px);min-height:0}
+  .fundador .lead{margin-inline:auto}
+  .linha-tempo{text-align:left;max-width:30rem;margin-inline:auto}
+  .pessoa{grid-template-columns:1fr;gap:.3rem;justify-items:center}
+  .pessoa:hover{padding-left:0}
+  .bolha{display:none}
+  .lojas{grid-template-columns:1fr}
+  .loja{min-height:0}
+  .rodape .wrap{grid-template-columns:1fr;text-align:center}
+  .rodape .marca{margin-inline:auto}
+}
+@media (max-width:420px){.btn{padding:1em 1.25em;font-size:.94rem}}
+@media (prefers-reduced-motion:reduce){
+  .trilho{animation:none!important}
+  .js.rv-pronto .rv:not(.in){opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<svg class="defs" aria-hidden="true" focusable="false"><defs><symbol id="logo" viewBox="379 375 2742 1840"><circle cx="1750" cy="1142" r="756" fill="#feed00"/><g transform="translate(0.000000,2590.000000) scale(0.100000,-0.100000)" fill="#fff"><path d="M3900 14480 l0 -1950 200 0 200 0 0 1527 c0 998 3 1524 10 1517 5 -5
+85 -151 178 -324 465 -870 567 -1060 597 -1115 44 -82 237 -441 290 -540 23
+-44 111 -207 194 -362 160 -299 226 -422 318 -595 l57 -108 141 0 140 0 156
+293 c87 160 307 571 489 912 444 828 761 1419 884 1650 l101 189 3 -1522 2
+-1522 205 0 205 0 0 1950 0 1950 -206 -2 -206 -3 -70 -130 c-68 -127 -417
+-778 -643 -1200 -62 -115 -163 -304 -225 -420 -62 -115 -198 -370 -303 -565
+-104 -195 -200 -373 -212 -395 -12 -22 -84 -157 -160 -300 -76 -143 -144 -268
+-150 -278 -11 -15 -26 8 -115 175 -56 106 -129 240 -160 298 -32 58 -123 227
+-202 375 -80 149 -262 488 -406 755 -143 267 -315 586 -381 710 -66 124 -212
+395 -323 602 l-203 378 -202 0 -203 0 0 -1950z"/><path d="M28930 16423 c-19 -1 -84 -8 -145 -13 -844 -80 -1369 -522 -1534
+-1293 -49 -225 -56 -305 -55 -642 0 -349 13 -482 70 -700 217 -839 828 -1245
+1877 -1245 1067 0 1698 431 1891 1293 100 446 86 1054 -34 1452 -214 710 -712
+1070 -1585 1144 -110 10 -402 12 -485 4z m570 -399 c791 -116 1163 -610 1163
+-1544 0 -869 -336 -1369 -1023 -1520 -308 -67 -739 -61 -1041 15 -724 182
+-1066 832 -958 1820 84 768 519 1186 1294 1245 147 11 435 3 565 -16z"/><path d="M24944 15645 c9 -33 54 -402 62 -502 6 -91 7 -93 32 -93 l25 0 -8
+113 c-9 146 -29 260 -65 377 -26 83 -62 166 -46 105z"/><path d="M25005 13803 c-3 -32 -15 -134 -26 -228 -17 -147 -27 -217 -55 -380
+-13 -79 81 137 111 252 23 91 45 257 45 341 l0 72 -34 0 -35 0 -6 -57z"/><path d="M8910 9182 c0 -21 18 -32 54 -32 45 0 46 -5 46 -357 0 -370 3 -353
+-69 -353 -25 0 -31 -4 -31 -21 0 -20 2 -21 233 -17 251 4 295 12 365 65 81 61
+100 182 41 262 -28 39 -111 91 -146 91 -7 0 -13 5 -13 10 0 6 7 10 15 10 31 0
+111 93 118 135 9 58 -7 113 -44 151 -56 57 -97 66 -346 71 -218 5 -223 5 -223
+-15z m428 -61 c49 -25 72 -64 72 -124 0 -92 -74 -150 -207 -162 l-73 -6 0 162
+0 162 83 -5 c57 -4 96 -12 125 -27z m17 -360 c68 -32 89 -62 93 -139 4 -80
+-16 -121 -75 -151 -81 -41 -209 -36 -233 9 -6 10 -10 82 -10 159 l0 141 93 0
+c68 0 102 -5 132 -19z"/><path d="M11140 9098 c-258 -627 -273 -658 -325 -658 -18 0 -25 -5 -25 -20 0
+-19 7 -20 126 -20 114 0 125 2 122 18 -2 11 -14 18 -33 20 -31 3 -56 26 -50
+45 2 7 18 51 36 100 l32 87 160 -2 159 -3 34 -80 c49 -117 46 -133 -26 -145
+-22 -3 -36 -12 -38 -23 -3 -16 11 -17 167 -17 164 0 171 1 171 20 0 15 -7 20
+-29 20 -45 0 -55 18 -221 404 l-153 356 -32 0 c-32 0 -34 -3 -75 -102z m110
+-215 c36 -81 67 -150 68 -155 2 -4 -57 -8 -132 -8 -75 0 -136 2 -136 4 0 2 27
+70 60 152 33 82 60 150 60 151 0 24 27 -25 80 -144z"/><path d="M22893 9184 c-8 -21 13 -34 54 -34 22 0 36 -6 43 -19 13 -25 14 -650
+1 -670 -5 -8 -29 -17 -53 -20 -30 -4 -44 -11 -46 -23 -3 -17 10 -18 168 -18
+158 0 171 1 168 18 -2 12 -15 18 -45 20 -23 2 -46 9 -52 16 -8 9 -10 117 -9
+346 3 368 -2 343 71 355 29 5 37 10 35 23 -5 25 -325 31 -335 6z"/><path d="M24782 9033 c-38 -93 -105 -252 -147 -356 -82 -196 -107 -237 -150
+-237 -18 0 -25 -5 -25 -20 0 -19 7 -20 120 -20 112 0 120 1 120 19 0 15 -8 21
+-31 23 -53 5 -55 23 -14 131 l38 97 159 -2 160 -3 34 -80 c47 -114 41 -145
+-32 -145 -27 0 -34 -4 -34 -20 0 -19 7 -20 170 -20 163 0 170 1 170 20 0 15
+-7 20 -30 20 -46 0 -56 17 -219 400 l-155 360 -32 0 c-31 0 -32 -1 -102 -167z
+m138 -155 l68 -153 -130 -3 c-72 -1 -133 -1 -135 2 -3 2 24 74 58 160 35 85
+65 153 67 151 3 -3 35 -73 72 -157z"/><path d="M12928 8443 c-40 -3 -48 -8 -48 -24 0 -17 7 -19 83 -19 l82 1 -30 24
+c-16 14 -32 24 -35 23 -3 -1 -26 -3 -52 -5z"/><path d="M14960 4899 c-107 -18 -126 -34 -68 -63 38 -19 36 -37 -43 -296 -29
+-95 -30 -96 -72 -77 -47 23 -73 21 -132 -7 -141 -66 -290 -280 -303 -431 -7
+-89 10 -115 76 -115 84 1 180 65 268 180 49 64 57 63 35 -2 -37 -109 -37 -159
+0 -178 45 -24 184 80 210 157 16 50 4 52 -36 6 -36 -43 -90 -72 -105 -57 -9 9
+59 244 184 636 66 208 77 259 54 257 -7 -1 -38 -5 -68 -10z m-180 -488 c33
+-64 -92 -296 -207 -383 -94 -71 -133 -75 -133 -13 0 174 282 503 340 396z"/><path d="M16460 4896 c-96 -17 -114 -34 -62 -58 15 -8 28 -23 30 -36 4 -24
+-84 -331 -98 -346 -5 -5 -24 -2 -45 9 -70 33 -156 -2 -255 -105 -138 -143
+-218 -351 -164 -428 21 -30 98 -30 156 -1 43 22 158 131 195 184 33 46 34 27
+6 -63 -27 -88 -26 -125 7 -142 54 -29 220 108 220 182 0 24 1 25 -58 -32 -55
+-53 -92 -65 -92 -30 0 22 90 326 189 636 34 106 61 203 61 218 0 29 1 29 -90
+12z m-169 -487 c53 -99 -227 -473 -326 -435 -48 18 26 216 126 337 90 108 173
+148 200 98z"/><path d="M17610 4781 c-69 -21 -158 -90 -186 -142 -22 -43 1 -46 45 -6 156
+140 333 68 292 -118 -27 -120 -155 -259 -484 -528 -26 -21 -47 -42 -47 -46 0
+-9 513 -23 535 -15 17 7 85 138 85 165 0 28 -16 23 -41 -11 -40 -53 -69 -60
+-256 -60 l-168 1 35 32 c20 17 95 81 167 140 152 125 248 223 274 281 21 46
+25 148 8 193 -34 90 -157 145 -259 114z"/><path d="M18308 4776 c-178 -64 -321 -331 -323 -601 0 -161 31 -222 132 -256
+206 -68 439 225 460 577 13 223 -99 341 -269 280z m122 -46 c117 -117 -51
+-716 -216 -770 -47 -16 -88 1 -106 43 -51 123 42 521 159 673 54 71 123 94
+163 54z"/><path d="M19075 4775 c-16 -7 -61 -16 -100 -20 -38 -4 -79 -12 -90 -18 -19
+-10 -18 -11 10 -23 17 -7 42 -13 58 -14 43 0 44 2 -75 -399 -91 -307 -98 -322
+-177 -340 -48 -11 -59 -17 -45 -30 13 -14 366 -1 361 13 -2 6 -23 15 -46 21
+-23 5 -47 18 -52 28 -11 20 32 195 131 527 85 283 85 282 25 255z"/><path d="M19810 4785 c-8 -2 -62 -9 -120 -15 -123 -14 -135 -23 -205 -135 -63
+-102 -89 -168 -76 -193 6 -11 45 -38 88 -60 172 -89 218 -146 211 -261 -4 -78
+-30 -122 -95 -163 -54 -33 -198 -34 -260 0 -59 31 -73 29 -73 -11 0 -179 433
+-56 520 149 62 143 -6 261 -211 368 -115 60 -114 59 -82 118 48 89 46 88 198
+88 l134 0 30 37 c45 54 42 83 -6 82 -21 -1 -45 -3 -53 -4z"/><path d="M15282 4461 c-57 -27 -145 -112 -186 -180 -147 -243 -63 -441 145
+-342 46 22 129 93 129 111 0 19 -32 10 -64 -17 -98 -83 -187 -66 -185 35 0 72
+19 114 54 125 194 59 285 124 285 203 0 74 -89 106 -178 65z m98 -55 c0 -51
+-65 -117 -154 -156 -62 -28 -70 -23 -45 28 62 125 199 213 199 128z"/><path d="M15679 4460 c-44 -23 -106 -91 -115 -125 -12 -47 3 -99 49 -175 60
+-98 65 -120 34 -155 -32 -38 -77 -36 -134 4 -53 37 -57 38 -71 6 -17 -38 -15
+-53 13 -80 78 -79 308 59 292 176 -2 19 -28 72 -56 118 -64 102 -72 133 -41
+166 30 32 45 31 92 -1 42 -30 63 -27 80 12 27 58 -67 94 -143 54z"/><path d="M16782 4454 c-104 -52 -215 -208 -243 -340 -16 -79 -6 -125 36 -170
+33 -34 38 -36 83 -32 63 6 130 39 181 89 61 58 46 87 -17 34 -109 -92 -201
+-63 -188 58 8 80 16 90 88 111 169 51 248 114 248 200 0 74 -90 99 -188 50z
+m108 -41 c0 -57 -55 -118 -143 -158 -73 -34 -82 -30 -54 24 60 120 197 213
+197 134z"/></g><g transform="translate(0.000000,2590.000000) scale(0.100000,-0.100000)" fill="#111"><path d="M12960 16343 c-85 -118 -2348 -3234 -2567 -3537 -95 -131 -173 -247
+-173 -257 0 -18 11 -19 233 -18 l232 0 265 366 c146 201 367 506 491 677 403
+555 1149 1583 1403 1934 137 188 253 342 257 342 5 0 9 -736 9 -1660 l0 -1660
+200 0 200 0 0 1950 0 1950 -243 0 -243 0 -64 -87z"/><path d="M16027 16424 c-4 -4 -7 -882 -7 -1951 l0 -1943 205 0 205 0 0 800 0
+800 529 0 529 0 243 -302 c134 -167 346 -431 472 -588 127 -157 306 -381 400
+-497 l171 -213 240 0 240 0 -26 28 c-14 15 -218 268 -454 562 -235 294 -513
+641 -617 770 l-189 235 38 6 c22 4 92 12 156 18 807 77 1208 517 1149 1259
+-47 589 -408 904 -1147 998 -137 18 -2120 34 -2137 18z m1978 -394 c596 -55
+840 -246 870 -680 23 -324 -95 -574 -327 -691 -180 -91 -474 -144 -762 -137
+l-140 3 -145 181 c-134 166 -681 846 -948 1179 -62 77 -113 143 -113 148 0 11
+1439 9 1565 -3z m-1200 -1050 c192 -239 353 -441 358 -447 7 -10 -66 -13 -362
+-13 l-371 0 0 462 c0 391 2 460 14 448 7 -8 170 -211 361 -450z"/><path d="M23010 16424 c-25 -2 -94 -8 -155 -14 -911 -89 -1407 -578 -1526
+-1510 -24 -186 -19 -723 9 -899 116 -725 467 -1154 1107 -1350 549 -168 1353
+-159 1855 21 253 91 479 260 587 440 40 67 79 291 118 686 l6 62 -163 0 -164
+0 -12 -122 c-15 -151 -32 -220 -82 -323 -131 -270 -397 -426 -830 -486 -128
+-18 -610 -18 -750 -1 -869 111 -1270 607 -1270 1573 0 950 308 1402 1035 1521
+181 30 698 32 875 4 378 -59 614 -165 794 -357 124 -132 184 -277 208 -506
+l12 -113 173 0 173 0 0 30 c0 48 -29 311 -51 465 -17 119 -25 149 -54 201
+-188 336 -538 548 -1048 633 -198 34 -683 59 -847 45z"/><path d="M12888 9194 c-19 -19 -5 -33 37 -40 30 -4 49 -13 56 -25 6 -12 9
+-144 9 -351 l-2 -331 29 -23 c38 -31 197 -36 191 -6 -2 12 -16 19 -45 23 -24
+3 -46 9 -50 13 -5 4 -9 71 -11 148 l-4 141 52 -5 c80 -8 120 -43 227 -200 l94
+-138 105 0 c97 0 104 1 104 20 0 15 -7 20 -25 20 -52 0 -84 29 -160 144 -41
+62 -92 129 -114 149 l-41 37 50 21 c199 86 192 320 -12 385 -57 18 -475 34
+-490 18z m437 -69 c58 -29 85 -75 85 -144 0 -120 -91 -191 -247 -191 l-63 0 0
+181 0 181 93 -4 c64 -3 104 -10 132 -23z"/><path d="M14920 9182 c0 -16 8 -23 38 -28 65 -12 62 4 62 -351 0 -362 0 -363
+-60 -363 -34 0 -40 -3 -40 -21 0 -21 2 -21 228 -17 292 6 365 27 419 123 63
+112 4 241 -130 286 l-50 17 34 17 c127 64 152 221 47 298 -56 41 -102 48 -330
+54 -216 6 -218 6 -218 -15z m405 -50 c84 -29 118 -110 81 -195 -28 -67 -91
+-98 -204 -101 l-67 -1 -3 145 c-1 79 0 150 2 157 8 19 130 16 191 -5z m34
+-368 c70 -28 101 -73 101 -148 0 -117 -64 -171 -202 -171 -116 0 -122 8 -126
+180 -2 75 -1 143 2 152 8 21 163 12 225 -13z"/><path d="M16870 9181 c0 -14 10 -21 38 -26 65 -12 62 4 62 -359 0 -365 2 -356
+-62 -356 -31 0 -38 -3 -38 -20 0 -20 5 -20 317 -18 l317 3 22 85 c28 105 29
+120 7 120 -11 -1 -30 -22 -48 -53 -50 -86 -102 -111 -241 -116 -157 -5 -154
+-8 -154 189 l0 150 70 0 c106 0 160 -41 160 -120 0 -13 7 -20 20 -20 19 0 20
+7 20 160 0 150 -1 160 -19 160 -14 0 -21 -10 -26 -37 -13 -68 -51 -93 -144
+-93 l-81 0 0 161 0 161 123 -3 c141 -5 195 -27 244 -100 16 -24 33 -39 42 -37
+20 4 17 21 -16 116 l-26 72 -293 0 c-282 0 -294 -1 -294 -19z"/><path d="M19080 8998 c-221 -536 -232 -558 -286 -558 -17 0 -24 -6 -24 -20 0
+-19 7 -20 120 -20 113 0 120 1 120 20 0 15 -7 20 -29 20 -16 0 -34 7 -41 15
+-13 16 -11 23 32 138 l30 77 159 0 159 0 26 -57 c59 -133 57 -161 -13 -172
+-25 -4 -39 -12 -41 -24 -3 -16 11 -17 167 -17 164 0 171 1 171 20 0 15 -7 20
+-30 20 -45 0 -57 20 -179 307 -63 147 -132 305 -153 351 -21 46 -38 87 -38 93
+0 5 -15 9 -33 9 l-33 0 -84 -202z m145 -103 c32 -71 61 -140 66 -152 l9 -23
+-135 0 c-74 0 -135 3 -135 6 0 20 125 313 131 307 4 -5 33 -66 64 -138z"/><path d="M20868 9194 c-19 -19 -5 -33 37 -40 29 -4 49 -13 55 -25 16 -28 13
+-651 -2 -672 -7 -9 -31 -17 -53 -19 -29 -2 -41 -8 -43 -20 -3 -17 10 -18 162
+-18 159 0 166 1 166 20 0 16 -7 20 -37 20 -66 0 -68 4 -71 160 l-4 140 38 0
+c89 0 135 -43 283 -262 l52 -78 104 0 c98 0 105 1 105 20 0 15 -7 20 -25 20
+-52 0 -84 29 -164 148 -43 65 -95 132 -115 150 l-36 31 48 21 c200 86 194 321
+-10 386 -57 18 -475 34 -490 18z m436 -69 c58 -29 79 -64 84 -138 7 -122 -86
+-197 -245 -197 l-63 0 0 173 c0 96 3 177 8 181 15 16 176 1 216 -19z"/></g></symbol></defs></svg>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a href="#inicio" aria-label="Marco Barbearia, início"><svg class="marca" viewBox="0 0 2742 1840" role="img" aria-label="Marco Barbearia"><use href="#logo"/></svg></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#clientes">Clientes</a>
+      <a href="#metodo">Método</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#unidades">Unidades</a>
+    </nav>
+    <a class="btn btn-am" href="obrigado.html?c=topo">Agendar</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" id="hero" aria-labelledby="h-hero">
+    <div class="hero-foto" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 899px)" srcset="/assets/img/hero-salao-vertical.webp">
+        <img class="base" src="/assets/img/hero-salao.webp" srcset="/assets/img/hero-salao-m.webp 1000w, /assets/img/hero-salao.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
+      </picture>
+      <div class="lente" id="lente">
+        <picture>
+          <source media="(max-width: 899px)" srcset="/assets/img/hero-salao-vertical.webp">
+          <img src="/assets/img/hero-salao.webp" srcset="/assets/img/hero-salao-m.webp 1000w, /assets/img/hero-salao.webp 1920w" sizes="100vw" width="1920" height="1080" alt="">
+        </picture>
+      </div>
+      <div class="anel" id="anel"></div>
+    </div>
+    <div class="wrap">
+      <div class="hero-txt">
+        <h1 id="h-hero">Antes de você falar, sua imagem <b>já falou</b></h1>
+        <p class="lead">Visagismo masculino com método próprio: a gente entende seu rosto, sua rotina e o jeito como você quer ser visto antes de pegar a tesoura. São 4 unidades, em São Paulo e Uberlândia.</p>
+        <div class="acoes" id="acoes-hero">
+          <a class="btn btn-am" href="obrigado.html?c=hero"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>Agendar minha experiência</a>
+          <a class="btn btn-vidro" href="#clientes">Ver quem já sentou aqui</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="numeros" aria-label="Marco Barbearia em números">
+    <div class="wrap">
+      <div class="num rv"><b><i>+</i><span data-num="10">10</span></b><span>anos cuidando de imagem masculina</span></div>
+      <div class="num rv" style="--d:.08s"><b><span data-num="4">4</span></b><span>unidades em São Paulo e Uberlândia</span></div>
+      <div class="num rv" style="--d:.16s"><b><span data-num="101">101</span><i> mil</i></b><span>pessoas acompanham o Marco no Instagram</span></div>
+      <div class="num rv" style="--d:.24s"><b><span data-num="24">24</span><i> mil</i></b><span>seguem a @marcobarbearia</span></div>
+    </div>
+  </section>
+
+  <section class="nomes" aria-label="Alguns clientes">
+    <div class="faixa" style="--dur:70s"><div class="trilho"><span>Arthur Aguiar</span><span>Arthur Melo</span><span>Bruno, de Bruno &amp; Marrone</span><span>Diego Hypólito</span><span>Gabriel Brazão</span><span>Léo Chaves</span><span>Dedé Santana</span></div></div>
+    <div class="faixa volta" style="--dur:76s"><div class="trilho"><span>Augusto Cury</span><span>Enzo Rabelo</span><span>Leo Foguete</span><span>Victor Hugo</span><span>André Baran</span><span>Felipe Pezzoni</span></div></div>
+  </section>
+
+  <section class="clientes" id="clientes" aria-labelledby="h-clientes">
+    <div class="wrap clientes-cab">
+      <h2 id="h-clientes" class="rv">Quem já sentou na <b>nossa cadeira</b></h2>
+      <p class="lead rv" style="--d:.1s">Atores, cantores, atletas e escritores confiam a imagem deles à Marco. Toque em um card para ver o vídeo do atendimento.</p>
+    </div>
+    <div class="palco" id="palco">
+      <div class="palco-fixo">
+        <div class="fila" id="fila">
+          <button class="cartao" data-ig="reel/DMfqsHaxG1D"><img src="/assets/img/cliente-arthur-aguiar.webp" width="640" height="800" loading="lazy" decoding="async" alt="Arthur Aguiar na Marco Barbearia"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="quem"><b>Arthur Aguiar</b><span>Ator e empresário, 4 meses de projeto de imagem</span></span></button>
+          <button class="cartao" data-ig="reel/De6xBOzhW5j"><img src="/assets/img/cliente-arthur-melo.webp" width="640" height="800" loading="lazy" decoding="async" alt="Arthur Melo, jogador do Santos, ao lado do Marco Túlio"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="quem"><b>Arthur Melo</b><span>Meio-campista do Santos, ex-Barcelona e seleção brasileira</span></span></button>
+          <button class="cartao" data-ig="reel/DCzyO52Jr_M"><img src="/assets/img/cliente-bruno.webp" width="640" height="800" loading="lazy" decoding="async" alt="Bruno, da dupla Bruno e Marrone, na Marco Barbearia"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="quem"><b>Bruno</b><span>Da dupla Bruno &amp; Marrone</span></span></button>
+          <button class="cartao texto" data-ig="p/DOpYHbjDcAW"><span class="circ"></span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="grande">Diego Hypólito</span><span>Medalhista olímpico</span></button>
+          <button class="cartao" data-ig="reel/DEGLqcyxIoO"><img src="/assets/img/cliente-gabriel-brazao.webp" width="640" height="800" loading="lazy" decoding="async" alt="Gabriel Brazão, goleiro, na Marco Barbearia"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="quem"><b>Gabriel Brazão</b><span>Goleiro do Santos</span></span></button>
+          <button class="cartao texto" data-ig="reel/DdkGRImOGmh"><span class="circ"></span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="grande">Léo Chaves</span><span>Cantor, da antiga dupla Victor &amp; Leo</span></button>
+          <button class="cartao" data-ig="reel/DdWyMlPhCJr"><img src="/assets/img/cliente-enzo-rabelo.webp" width="640" height="800" loading="lazy" decoding="async" alt="Enzo Rabelo na Marco Barbearia"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="quem"><b>Enzo Rabelo</b><span>Cantor</span></span></button>
+          <button class="cartao texto" data-ig="reel/DPMMJxdkbvR"><span class="circ"></span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="grande">Dedé Santana</span><span>Dos Trapalhões</span></button>
+          <div class="cartao"><img src="/assets/img/cliente-leo-foguete.webp" width="640" height="800" loading="lazy" decoding="async" alt="Leo Foguete na Marco Barbearia"><span class="quem"><b>Leo Foguete</b><span>Cantor</span></span></div>
+          <button class="cartao texto" data-ig="reel/Da1AW8RPZmO"><span class="circ"></span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="grande">André Baran</span><span>Já foi número 1 do mundo no beach tennis</span></button>
+          <div class="cartao"><img src="/assets/img/cliente-victor-hugo.webp" width="640" height="800" loading="lazy" decoding="async" alt="Victor Hugo, da dupla Diego e Victor Hugo, na Marco Barbearia"><span class="quem"><b>Victor Hugo</b><span>Da dupla Diego &amp; Victor Hugo</span></span></div>
+          <button class="cartao texto" data-ig="reel/DWZasvaEx5h"><span class="circ"></span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="grande">Augusto Cury</span><span>Escritor</span></button>
+          <button class="cartao texto" data-ig="reel/DRruSlZDIUC"><span class="circ"></span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="grande">Felipe Pezzoni</span><span>Vocalista da Banda Eva</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="metodo" id="metodo" aria-labelledby="h-metodo">
+    <div class="wrap">
+      <div class="metodo-cab">
+        <h2 id="h-metodo" class="rv">Seu corte começa <b>numa conversa</b></h2>
+        <p class="lead rv" style="--d:.1s">Antes de qualquer atendimento existe um bate-papo de 5, 10, às vezes 15 minutos, porque o corte certo depende de quem você é e de onde você quer chegar.</p>
+      </div>
+      <ol class="passos" id="passos">
+        <li class="passo rv"><span class="n">01</span><h3>Conversa</h3><p>Entendemos seu momento, sua profissão, sua rotina e como você quer ser percebido.</p></li>
+        <li class="passo rv" style="--d:.08s"><span class="n">02</span><h3>Análise</h3><p>Olhamos formato do rosto, proporções, tipo de fio e o crescimento do cabelo e da barba.</p></li>
+        <li class="passo rv" style="--d:.16s"><span class="n">03</span><h3>Projeto</h3><p>Corte, barba, sobrancelha, cor e textura pensados juntos. Alguns projetos levam meses, como o do Arthur Aguiar, construído em 4.</p></li>
+        <li class="passo rv" style="--d:.24s"><span class="n">04</span><h3>Manutenção</h3><p>Você sai sabendo finalizar em casa, com os produtos certos e a agenda das próximas visitas.</p></li>
+      </ol>
+
+      <div class="rosto rv" id="rosto">
+        <div>
+          <h3>Qual é o formato do seu rosto?</h3>
+          <div class="formatos" role="group" aria-label="Formatos de rosto" id="formatos"></div>
+          <div class="dica-rosto" id="dica-rosto" aria-live="polite"></div>
+          <p class="nota-rosto">Isso é só o ponto de partida. A análise de verdade considera também o tipo de cabelo, a rotina e a personalidade, e acontece na conversa antes do corte.</p>
+        </div>
+        <div class="desenho">
+          <svg viewBox="-260 -260 520 520" aria-hidden="true">
+            <circle class="halo" r="246"/>
+            <circle class="halo" r="200" style="stroke-dasharray:2 8"/>
+            <line class="guia" x1="0" y1="-230" x2="0" y2="230"/>
+            <line class="guia" id="g1" x1="-230" x2="230"/>
+            <line class="guia" id="g2" x1="-230" x2="230"/>
+            <line class="guia" id="g3" x1="-230" x2="230"/>
+            <path class="face" id="face"/>
+            <path class="traco" id="sobr"/>
+            <line class="medida" id="m1"/><line class="medida" id="m2"/><line class="medida" id="m3"/>
+            <text id="t1" text-anchor="start">TESTA</text><text id="t2" text-anchor="start">MAÇÃS</text><text id="t3" text-anchor="start">MANDÍBULA</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicos" aria-labelledby="h-serv">
+    <div class="wrap">
+      <h2 id="h-serv" class="rv">O que você encontra <b>na Marco</b></h2>
+      <div class="pilha">
+        <article class="serv" style="--i:0"><span class="n">01</span><div><h3>Visagismo</h3><p>Uma consultoria completa de imagem para chegar ao visual que você sempre quis e que conversa com a sua personalidade.</p></div><span class="circ"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><path d="M12 16v6M9 22h6"/></svg></span></article>
+        <article class="serv" style="--i:1"><span class="n">02</span><div><h3>Cabelo</h3><p>Corte feito sob medida, com acabamento que continua alinhado muito depois do dia em que você sai da cadeira.</p></div><span class="circ"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.6 7.5 20 18M8.6 16.5 20 6"/></svg></span></article>
+        <article class="serv" style="--i:2"><span class="n">03</span><div><h3>Barba</h3><p>Desenho, alinhamento e cuidado para uma barba que trabalha a favor do formato do seu rosto.</p></div><span class="circ"><svg viewBox="0 0 24 24"><path d="M5 9c0 6 3 11 7 11s7-5 7-11"/><path d="M9 14c1 1 5 1 6 0"/></svg></span></article>
+        <article class="serv" style="--i:3"><span class="n">04</span><div><h3>Sobrancelha</h3><p>Design masculino que equilibra a expressão, respeitando o desenho natural, sem deixar nada com cara de feito.</p></div><span class="circ"><svg viewBox="0 0 24 24"><path d="M3 12c3-4 7-5 9-5s6 1 9 5"/><circle cx="12" cy="15" r="2"/></svg></span></article>
+        <article class="serv" style="--i:4"><span class="n">05</span><div><h3>Cor e grisalho</h3><p>Tonalização e transição para deixar o grisalho assumir o protagonismo, no tempo que fizer sentido para você.</p></div><span class="circ"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16"/></svg></span></article>
+        <article class="serv" style="--i:5"><span class="n">06</span><div><h3>Textura e finalização</h3><p>Forma e movimento para cabelo ondulado, cacheado ou liso, com a finalização ensinada ali mesmo, para você repetir em casa.</p></div><span class="circ"><svg viewBox="0 0 24 24"><path d="M4 8c3-3 5 3 8 0s5 3 8 0M4 16c3-3 5 3 8 0s5 3 8 0"/></svg></span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fundador" aria-labelledby="h-fund">
+    <div class="wrap">
+      <figure class="retrato rv"><img src="/assets/img/marco-tulio-recorte.webp" width="820" height="1740" loading="lazy" decoding="async" alt="Marco Túlio Fernandes, fundador da Marco Barbearia, sentado num banco"></figure>
+      <div>
+        <h2 id="h-fund" class="rv">De R$ 5 no fundo de casa a <b>4 unidades</b></h2>
+        <p class="lead rv" style="--d:.1s">O Marco Túlio Fernandes começou no futebol, cortando cabelo dentro de alojamentos com uma máquina, uma Mobilete e muita coragem, e em 2014 já atendia no fundo da casa dos pais por R$ 5. Hoje ele é empresário e barbeiro visagista, forma outros barbeiros e tem mais de 101 mil pessoas acompanhando o trabalho dele.</p>
+        <ol class="linha-tempo" id="linha-tempo">
+          <li class="marco"><b>Início</b><span>Cortes dentro de alojamentos de futebol, com uma máquina na mão.</span></li>
+          <li class="marco"><b>2014</b><span>Atendimento no fundo da casa dos pais, a R$ 5.</span></li>
+          <li class="marco"><b>2015</b><span>Nasce a Marco Barbearia.</span></li>
+          <li class="marco"><b>2016</b><span>Um espaço da Marco dentro de uma academia em Uberlândia.</span></li>
+          <li class="marco"><b>Container</b><span>A unidade do Container Village, na Zona Sul de Uberlândia.</span></li>
+          <li class="marco"><b>Vinhedos</b><span>A primeira barbearia da cidade num prédio com vista para o pôr do sol.</span></li>
+          <li class="marco"><b>Brooklin</b><span>A chegada a São Paulo.</span></li>
+          <li class="marco"><b>2026</b><span>IronBarber by Marco, dentro da academia Ironberg, em São Paulo.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipe" id="equipe" aria-labelledby="h-equipe">
+    <div class="wrap">
+      <h2 id="h-equipe" class="rv">Quem cuida da <b>sua imagem</b></h2>
+      <ul class="time" id="time">
+        <li><a class="pessoa rv" href="https://www.instagram.com/marcovisagismo/" target="_blank" rel="noopener"><b>Marco Túlio</b><span>Fundador e barbeiro visagista</span><em>@marcovisagismo</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/thuliolaureano/" target="_blank" rel="noopener"><b>Thulio Laureano</b><span>Visagista</span><em>@thuliolaureano</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/amorim_vb/" target="_blank" rel="noopener"><b>Victor Amorim</b><span>Barbeiro educador</span><em>@amorim_vb</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/eri_concept_/" target="_blank" rel="noopener"><b>Eri</b><span>Visagista</span><em>@eri_concept_</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/inaciooxp/" target="_blank" rel="noopener"><b>Inácio Henrique</b><span>Visagista</span><em>@inaciooxp</em></a></li>
+      </ul>
+    </div>
+    <span class="bolha" id="bolha" aria-hidden="true"></span>
+  </section>
+
+  <section class="unidades" id="unidades" aria-labelledby="h-unid">
+    <div class="wrap">
+      <h2 id="h-unid" class="rv">Escolha a unidade <b>mais perto de você</b></h2>
+      <div class="lojas">
+        <article class="loja rv"><div class="foto"><img src="/assets/img/unidade-vinhedos.webp" width="900" height="1216" loading="lazy" decoding="async" alt="Recepção da unidade Vinhedos com vista pela janela"></div>
+          <div class="info"><span class="cidade">UBERLÂNDIA, MG</span><h3>Vinhedos</h3><p>Av. dos Vinhedos, 70, sala 210, Jardim Karaíba. Num prédio com vista para o pôr do sol.</p>
+          <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=vinhedos"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+dos+Vinhedos,+70,+Uberl%C3%A2ndia+MG" target="_blank" rel="noopener">Como chegar</a></div></div></article>
+        <article class="loja rv" style="--d:.08s"><div class="foto"><img src="/assets/img/unidade-container.webp" width="900" height="1216" loading="lazy" decoding="async" alt="Cadeiras de lavatório da unidade Container"></div>
+          <div class="info"><span class="cidade">UBERLÂNDIA, MG</span><h3>Container</h3><p>Rua Rafael Marino Neto, 180, Jardim Karaíba, no Container Village.</p>
+          <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=container"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Rafael+Marino+Neto,+180,+Uberl%C3%A2ndia+MG" target="_blank" rel="noopener">Como chegar</a></div></div></article>
+        <article class="loja rv" style="--d:.16s"><div class="foto vazia" aria-hidden="true"><i></i></div>
+          <div class="info"><span class="cidade">SÃO PAULO, SP</span><h3>Brooklin</h3><p>Rua Pitu, 72, Brooklin.</p>
+          <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=brooklin"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Pitu,+72,+Brooklin,+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener">Como chegar</a></div></div></article>
+        <article class="loja rv" style="--d:.24s"><div class="foto vazia" aria-hidden="true"><i></i></div>
+          <div class="info"><span class="cidade">SÃO PAULO, SP</span><h3>IronBarber by Marco</h3><p>Dentro da academia Ironberg, na Barra Funda. Você cuida da imagem no mesmo lugar onde treina.</p>
+          <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=ironbarber"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Ironberg+Barra+Funda+S%C3%A3o+Paulo" target="_blank" rel="noopener">Como chegar</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fim" id="fim" aria-labelledby="h-fim">
+    <div class="fim-fixo">
+      <div class="fim-circulo" aria-hidden="true"></div>
+      <div class="fim-txt">
+        <h2 id="h-fim">Sua próxima versão começa <b>numa conversa</b></h2>
+        <p>Chama no WhatsApp, conta o que você quer mudar e a gente encontra o melhor horário para você.</p>
+        <a class="btn btn-tinta" href="obrigado.html?c=final"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div><svg class="marca" viewBox="0 0 2742 1840" role="img" aria-label="Marco Barbearia"><use href="#logo"/></svg></div>
+    <div>
+      <h3>Unidades</h3>
+      <ul>
+        <li><b>Vinhedos, Uberlândia</b>Av. dos Vinhedos, 70, sala 210, Jardim Karaíba</li>
+        <li><b>Container, Uberlândia</b>Rua Rafael Marino Neto, 180, Jardim Karaíba</li>
+        <li><b>Brooklin, São Paulo</b>Rua Pitu, 72, Brooklin</li>
+        <li><b>IronBarber by Marco, São Paulo</b>Academia Ironberg, Barra Funda</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Instagram</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/marcobarbearia/" target="_blank" rel="noopener">@marcobarbearia</a></li>
+        <li><a href="https://www.instagram.com/marcovisagismo/" target="_blank" rel="noopener">@marcovisagismo</a></li>
+        <li><a href="https://www.instagram.com/ironbarberbymarco/" target="_blank" rel="noopener">@ironbarberbymarco</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Empresa</h3>
+      <ul>
+        <li><b>Marco Barbearia Vinhedos</b>Fernandes &amp; Moraes Serviços LTDA</li>
+        <li>CNPJ 55.465.733/0001-93</li>
+        <li>Av. dos Vinhedos, 70, sala 210, Karaíba, Uberlândia, MG, 38411-217</li>
+      </ul>
+    </div>
+    <div class="base"><span>© 2026 Marco Barbearia. Todos os direitos reservados.</span><a href="privacidade.html">Política de privacidade</a></div>
+  </div>
+</footer>
+
+<a class="flutua" id="flutua" href="obrigado.html?c=flutuante" aria-label="Agendar pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.25-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg></a>
+
+<dialog class="modal" id="modal" aria-label="Vídeo do atendimento">
+  <button class="fecha" id="fecha" aria-label="Fechar vídeo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <iframe id="video" title="Vídeo do atendimento no Instagram" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+</dialog>
+
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
