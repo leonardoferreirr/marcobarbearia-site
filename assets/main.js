@@ -14,7 +14,7 @@
   const raioAlvo = () => desktop() ? Math.max(120, Math.min(230, innerWidth * .15)) : Math.max(96, innerWidth * .28);
   const centro = () => {
     const r = hero.getBoundingClientRect();
-    return desktop() ? { x: r.width * .72, y: r.height * .44 } : { x: r.width * .5, y: r.height * .34 };
+    return desktop() ? { x: r.width * .76, y: r.height * .42 } : { x: r.width * .5, y: r.height * .47 };
   };
   if (hero && foto && !reduz) {
     pos = centro(); alvo = { ...pos };
@@ -28,7 +28,7 @@
         const r = hero.getBoundingClientRect();
         if (agora - ultimoMouse > 2500) {           // sem mouse: o espelho passeia devagar
           const c = centro(), t = (agora - t0) / 1000;
-          alvo = { x: c.x + Math.sin(t * .32) * r.width * (desktop() ? .12 : .22), y: c.y + Math.sin(t * .47) * r.height * .1 };
+          alvo = { x: c.x + Math.sin(t * .32) * r.width * (desktop() ? .12 : .16), y: c.y + Math.sin(t * .47) * r.height * (desktop() ? .1 : .05) };
         }
         pos.x += (alvo.x - pos.x) * .08; pos.y += (alvo.y - pos.y) * .08;
         raio += (raioAlvo() - raio) * .06;
@@ -44,23 +44,33 @@
   }
 
   /* ---------- formato de rosto que se transforma ---------- */
+  // Contorno feito de pontos de controle anatômicos (topo, têmpora, testa, maçã, mandíbula, queixo)
+  // ligados por spline; cada formato muda só as proporções, como num rosto de verdade.
   const FORMATOS = [
-    ['oval', 'Oval', 'Proporções equilibradas, que aceitam quase tudo. O cuidado é não colocar volume demais num ponto só e quebrar esse equilíbrio.', y => .74 * Math.sqrt(1 - y * y) * (1 - .1 * Math.max(y, 0)), 1],
-    ['redondo', 'Redondo', 'A ideia é alongar: mais volume no topo, laterais mais baixas e uma barba que desenha o queixo.', y => .9 * Math.pow(1 - y * y, .42), .86],
-    ['quadrado', 'Quadrado', 'Mandíbula marcada é presença. Dá para suavizar com textura no topo ou reforçar com linhas retas, conforme o jeito como você quer ser visto.', y => .82 * Math.pow(1 - Math.pow(Math.abs(y), 5), .2), .9],
-    ['alongado', 'Alongado', 'Pede menos altura no topo e um pouco mais de volume nas laterais, e uma franja ou textura ajuda a encurtar a linha do rosto.', y => .64 * Math.pow(1 - Math.pow(Math.abs(y), 4.5), 1 / 4.5), 1.08],
-    ['triangular', 'Triangular', 'Quando a mandíbula é mais larga que a testa, volume na parte de cima equilibra a base, com a barba mais curta nas laterais.', y => (.5 + .34 * (y + 1) / 2) * Math.pow(1 - Math.pow(Math.abs(y), 4), .25), .96],
-    ['coracao', 'Coração', 'Testa larga e queixo fino pedem menos volume no topo e uma barba que dê corpo ao queixo.', y => (.88 - .4 * Math.pow((y + 1) / 2, 1.3)) * Math.pow(1 - Math.pow(Math.abs(y), 2.2), 1 / 2.2), .98],
-    ['losango', 'Losango', 'As maçãs do rosto aparecem mais. Volume na testa e no queixo equilibram, sem exagero nas laterais.', y => .82 * Math.pow(Math.max(0, 1 - Math.pow(Math.abs((y + .12) / 1.12), 1.5)), .9), 1],
+    ['oval', 'Oval', 'Proporções equilibradas, que aceitam quase tudo. O cuidado é não colocar volume demais num ponto só e quebrar esse equilíbrio.', [.70, .80, .62, .30, 1]],
+    ['redondo', 'Redondo', 'A ideia é alongar: mais volume no topo, laterais mais baixas e uma barba que desenha o queixo.', [.76, .86, .74, .40, .9]],
+    ['quadrado', 'Quadrado', 'Mandíbula marcada é presença. Dá para suavizar com textura no topo ou reforçar com linhas retas, conforme o jeito como você quer ser visto.', [.78, .82, .80, .52, .95]],
+    ['alongado', 'Alongado', 'Pede menos altura no topo e um pouco mais de volume nas laterais, e uma franja ou textura ajuda a encurtar a linha do rosto.', [.64, .72, .62, .32, 1.1]],
+    ['triangular', 'Triangular', 'Quando a mandíbula é mais larga que a testa, volume na parte de cima equilibra a base, com a barba mais curta nas laterais.', [.62, .76, .84, .46, .98]],
+    ['coracao', 'Coração', 'Testa larga e queixo fino pedem menos volume no topo e uma barba que dê corpo ao queixo.', [.84, .82, .58, .18, 1]],
+    ['losango', 'Losango', 'As maçãs do rosto aparecem mais. Volume na testa e no queixo equilibram, sem exagero nas laterais.', [.58, .86, .60, .22, 1.02]],
   ];
-  const N = 44, S = 172, H = 205, NIV = [-.55, -.1, .55];
-  const pontos = ([, , , W, v]) => {
-    const dir = [], esq = [];
-    for (let i = 0; i <= N; i++) {
-      const y = -1 + 2 * i / N, x = S * W(y);
-      dir.push([x, y * H * v]); esq.unshift([-x, y * H * v]);
-    }
-    return { pts: [...dir, ...esq.slice(1, -1)], nivel: NIV.map(y => ({ y: y * H * v, x: S * W(y) })) };
+  const S = 175, H = 208, POR = 9;           // escala, meia altura, amostras por trecho
+  const catmull = (p0, p1, p2, p3, t) => {
+    const t2 = t * t, t3 = t2 * t;
+    return [0, 1].map(k => .5 * (2 * p1[k] + (-p0[k] + p2[k]) * t + (2 * p0[k] - 5 * p1[k] + 4 * p2[k] - p3[k]) * t2 + (-p0[k] + 3 * p1[k] - 3 * p2[k] + p3[k]) * t3));
+  };
+  const pontos = forma => {
+    const [fh, ck, jw, ch, L] = forma[3];
+    const c = [[0, -1], [.56 * fh, -.95], [fh, -.62], [ck, -.12], [jw, .42], [ch + (jw - ch) * .38, .8], [ch * .55, .97], [0, 1]]
+      .map(([x, y]) => [x * S, y * H * L]);
+    const ext = [[-c[1][0], c[1][1]], ...c, [-c[6][0], c[6][1]]];
+    const dir = [];
+    for (let i = 1; i < ext.length - 2; i++)
+      for (let k = 0; k < POR; k++) dir.push(catmull(ext[i - 1], ext[i], ext[i + 1], ext[i + 2], k / POR));
+    dir.push(c[c.length - 1]);
+    const esq = dir.slice(1, -1).reverse().map(([x, y]) => [-x, y]);
+    return { pts: [...dir, ...esq], L, nivel: [[fh, -.62], [ck, -.12], [jw, .42]].map(([x, y]) => ({ x: x * S, y: y * H * L })) };
   };
   const face = $('#face');
   if (face) {
@@ -68,15 +78,20 @@
     const lista = $('#formatos'), dica = $('#dica-rosto');
     lista.innerHTML = FORMATOS.map(([id, nome], i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${nome}</button>`).join('');
     let atual = pontos(FORMATOS[0]);
-    const pinta = forma => {
-      face.setAttribute('d', caminho(forma.pts));
-      forma.nivel.forEach((n, k) => {
-        $('#g' + (k + 1)).setAttribute('y1', n.y); $('#g' + (k + 1)).setAttribute('y2', n.y);
+    const pinta = f => {
+      face.setAttribute('d', caminho(f.pts));
+      f.nivel.forEach((n, k) => {
+        const g = $('#g' + (k + 1)); g.setAttribute('y1', n.y); g.setAttribute('y2', n.y);
         const m = $('#m' + (k + 1)); m.setAttribute('x1', -n.x); m.setAttribute('x2', n.x); m.setAttribute('y1', n.y); m.setAttribute('y2', n.y);
-        const t = $('#t' + (k + 1)); t.setAttribute('x', n.x + 12); t.setAttribute('y', n.y + 4);
+        const t = $('#t' + (k + 1)); t.setAttribute('x', n.x + 14); t.setAttribute('y', n.y + 4);
       });
-      const yb = forma.nivel[1].y - 34, xb = forma.nivel[1].x * .62;
-      $('#sobr').setAttribute('d', `M${-xb} ${yb + 4}Q${-xb / 2} ${yb - 8} ${-12} ${yb + 2}M${xb} ${yb + 4}Q${xb / 2} ${yb - 8} ${12} ${yb + 2}`);
+      // traços discretos: sobrancelhas, olhos, nariz e boca acompanham a altura do rosto
+      const y = v => (v * H * f.L).toFixed(1);
+      $('#tracos').setAttribute('d',
+        `M-74 ${y(-.33)}Q-48 ${y(-.4)} -22 ${y(-.34)}M74 ${y(-.33)}Q48 ${y(-.4)} 22 ${y(-.34)}` +
+        `M-66 ${y(-.2)}Q-48 ${y(-.25)} -30 ${y(-.2)}Q-48 ${y(-.16)} -66 ${y(-.2)}M66 ${y(-.2)}Q48 ${y(-.25)} 30 ${y(-.2)}Q48 ${y(-.16)} 66 ${y(-.2)}` +
+        `M-4 ${y(-.12)}L-10 ${y(.17)}Q0 ${y(.22)} 12 ${y(.17)}` +
+        `M-30 ${y(.46)}Q0 ${y(.52)} 30 ${y(.46)}`);
     };
     const escreve = i => { dica.innerHTML = `<b>Rosto ${FORMATOS[i][1].toLowerCase()}</b><p>${FORMATOS[i][2]}</p>`; };
     pinta(atual); escreve(0);
@@ -93,6 +108,7 @@
       const passo = agora => {
         const k = sai(lim((agora - ini) / 650));
         atual = {
+          L: de.L + (para.L - de.L) * k,
           pts: de.pts.map((p, j) => [p[0] + (para.pts[j][0] - p[0]) * k, p[1] + (para.pts[j][1] - p[1]) * k]),
           nivel: de.nivel.map((n, j) => ({ y: n.y + (para.nivel[j].y - n.y) * k, x: n.x + (para.nivel[j].x - n.x) * k })),
         };
@@ -148,7 +164,7 @@
       const r = passos.getBoundingClientRect();
       const p = lim((vh * .78 - r.top) / (r.height + vh * .2));
       passos.style.setProperty('--p', p.toFixed(3));
-      itensPasso.forEach((li, i) => li.classList.toggle('on', p >= i / (itensPasso.length - 1) - .05 || !desktop()));
+      itensPasso.forEach((li, i) => li.classList.toggle('on', p >= i / (itensPasso.length - 1) - .05));
     } else itensPasso.forEach(li => li.classList.add('on'));
     if (tempo && !reduz) {
       const r = tempo.getBoundingClientRect();

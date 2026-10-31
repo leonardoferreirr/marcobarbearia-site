@@ -47,7 +47,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .defs{position:absolute;width:0;height:0;overflow:hidden}
 .wrap{width:min(1280px,100% - 2*var(--gut));margin-inline:auto}
 h1,h2{font-weight:300;letter-spacing:-.025em;text-wrap:balance}
-h1{font-size:clamp(2.6rem,6vw,6.2rem);line-height:1.02}
+h1{font-size:clamp(2.5rem,5vw,5.3rem);line-height:1.04}
 h2{font-size:clamp(2.1rem,4.4vw,4.4rem);line-height:1.05}
 h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .lead{font-weight:300;font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.6;color:var(--suave)}
@@ -85,8 +85,10 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .anel{position:absolute;left:var(--x,72%);top:var(--y,46%);width:calc(var(--r,0px)*2);height:calc(var(--r,0px)*2);transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--amarelo);box-shadow:0 0 0 6px rgba(254,237,0,.08),0 0 60px rgba(254,237,0,.35),inset 0 0 50px rgba(254,237,0,.22);pointer-events:none;will-change:left,top}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,.35) 48%,rgba(11,11,11,0) 70%),linear-gradient(0deg,var(--bg) 0%,rgba(11,11,11,0) 38%)}
 .hero .wrap{padding-block:calc(var(--topo) + 3rem) clamp(3rem,7vw,5.5rem)}
-.hero-txt{max-width:44rem}
-.hero .lead{margin-top:1.6rem;max-width:36rem;color:rgba(244,242,236,.78)}
+.hero-txt{max-width:62rem}
+.hero h1{color:var(--amarelo);font-weight:500}
+.hero h1 span{display:block}
+.hero .lead{margin-top:1.6rem;max-width:60rem;color:rgba(244,242,236,.8)}
 .acoes{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.4rem}
 
 /* números */
@@ -132,6 +134,9 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .cartao.texto .circ{position:absolute;top:-30%;right:-30%;width:80%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(254,237,0,.25);transition:transform 1s var(--ease)}
 .cartao.texto:hover .circ{transform:scale(1.15)}
 
+.cta-meio{display:flex;justify-content:center;padding-top:clamp(1.5rem,3vw,2.5rem)}
+.clientes .cta-meio{padding-bottom:clamp(1rem,3vw,2rem)}
+
 /* modal do vídeo */
 .modal{position:fixed;inset:0;margin:auto;width:min(420px,92vw);height:min(780px,88svh);padding:0;border:0;border-radius:18px;background:#000;overflow:hidden;color:var(--texto)}
 .modal::backdrop{background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
@@ -151,24 +156,29 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .passo p{color:var(--suave);margin-top:.5rem;font-size:.97rem}
 
 /* formato de rosto */
-.rosto{margin-top:clamp(4rem,8vw,6rem);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;background:var(--bg-2);border:1px solid var(--linha);border-radius:32px;padding:clamp(1.5rem,4vw,3.5rem)}
+.rosto{margin-top:clamp(3rem,6vw,4.5rem);display:grid;grid-template-columns:1fr minmax(0,360px);grid-template-areas:"tit des" "chips des" "dica des" "nota des";column-gap:clamp(2rem,5vw,4.5rem);align-content:center;background:var(--bg-2);border:1px solid var(--linha);border-radius:32px;padding:clamp(1.5rem,3vw,2.6rem) clamp(1.5rem,4vw,3.2rem)}
+.rosto h3{grid-area:tit;align-self:end}
+.rosto .formatos{grid-area:chips}
+.rosto .desenho{grid-area:des;align-self:center}
+.rosto .dica-rosto{grid-area:dica}
+.rosto .nota-rosto{grid-area:nota}
 .rosto h3{font-weight:300;font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.1;letter-spacing:-.02em}
-.formatos{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.formatos{display:grid;grid-template-columns:repeat(4,max-content);gap:.5rem;margin-top:1.4rem}
 .formatos button{padding:.55em 1.1em;border:1px solid var(--linha);border-radius:999px;font-size:.92rem;color:var(--suave);transition:all .3s var(--ease)}
 .formatos button:hover{color:var(--texto);border-color:rgba(255,255,255,.45)}
 .formatos button[aria-pressed="true"]{background:var(--amarelo);color:var(--tinta);border-color:var(--amarelo)}
-.dica-rosto{margin-top:1.6rem;min-height:7.5em}
+.dica-rosto{margin-top:1.3rem;min-height:6.2em}
 .dica-rosto b{display:block;font-weight:500;font-size:1.15rem;margin-bottom:.4rem}
 .dica-rosto p{color:var(--suave)}
-.nota-rosto{margin-top:1.4rem;font-size:.9rem;color:var(--suave);border-left:2px solid var(--amarelo);padding-left:.9rem}
-.desenho{position:relative;aspect-ratio:1;max-width:460px;width:100%;margin-inline:auto}
+.nota-rosto{margin-top:1.2rem;font-size:.8rem;line-height:1.55;color:rgba(244,242,236,.5)}
+.desenho{position:relative;aspect-ratio:1;max-width:360px;width:100%;margin-inline:auto}
 .desenho svg{width:100%;height:100%;overflow:visible}
 .desenho .halo{fill:none;stroke:rgba(254,237,0,.18);stroke-width:1}
-.desenho .face{fill:rgba(254,237,0,.06);stroke:var(--amarelo);stroke-width:2.2;stroke-linejoin:round}
+.desenho .face{fill:rgba(254,237,0,.05);stroke:var(--amarelo);stroke-width:2;stroke-linejoin:round}
 .desenho .guia{stroke:rgba(244,242,236,.28);stroke-width:1;stroke-dasharray:4 6}
 .desenho .medida{stroke:var(--texto);stroke-width:1.2}
 .desenho text{fill:var(--suave);font:400 11px var(--fonte);letter-spacing:.06em}
-.desenho .traco{fill:none;stroke:rgba(244,242,236,.55);stroke-width:1.6;stroke-linecap:round}
+.desenho .traco{fill:none;stroke:rgba(244,242,236,.45);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 
 /* serviços empilhados */
 .servicos{padding-block:clamp(4rem,8vw,7rem)}
@@ -183,18 +193,18 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .serv .circ svg{width:42%;height:42%;stroke:var(--amarelo);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 
 /* fundador */
-.fundador{position:relative;padding-block:clamp(4rem,8vw,7rem);border-top:1px solid var(--linha)}
+.fundador{position:relative;padding-block:clamp(3.5rem,6vw,5rem);border-top:1px solid var(--linha)}
 .fundador .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,5rem);align-items:center}
 /* o Marco sentado sobre o círculo amarelo do logo */
-.retrato{position:relative;height:min(82svh,740px);min-height:520px}
+.retrato{position:relative;height:min(70svh,620px);min-height:460px}
 .retrato::before{content:"";position:absolute;left:50%;bottom:6%;width:min(100%,520px);aspect-ratio:1;border-radius:50%;background:var(--amarelo);transform:translateX(-50%) scale(var(--s,1));transition:transform 1.2s var(--ease)}
 .js.rv-pronto .retrato:not(.in)::before{--s:.6}
 .retrato img{position:absolute;bottom:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%)}
 .fundador .lead{margin-top:1.4rem}
-.linha-tempo{margin-top:clamp(2.5rem,5vw,3.5rem);position:relative;padding-left:1.6rem}
+.linha-tempo{margin-top:clamp(1.6rem,3vw,2.2rem);position:relative;padding-left:1.6rem}
 .linha-tempo::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--linha)}
 .linha-tempo::after{content:"";position:absolute;left:5px;top:6px;width:1px;height:calc(100% - 12px);background:var(--amarelo);transform-origin:top;transform:scaleY(var(--p,1))}
-.marco{position:relative;padding-block:.55rem}
+.marco{position:relative;padding-block:.35rem}
 .marco::before{content:"";position:absolute;left:-1.6rem;top:.95rem;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid rgba(255,255,255,.35);transition:all .4s var(--ease)}
 .marco.on::before{background:var(--amarelo);border-color:var(--amarelo)}
 .marco b{font-weight:500;color:var(--amarelo);margin-right:.6rem;font-variant-numeric:tabular-nums}
@@ -269,10 +279,14 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .marca{height:44px}
   .topo .btn{padding:.75em 1.05em;font-size:.86rem}
   body{text-align:center}
-  .hero{min-height:100svh}
-  .hero::after{background:linear-gradient(0deg,var(--bg) 4%,rgba(11,11,11,.72) 42%,rgba(11,11,11,.15) 75%)}
-  .hero-txt{margin-inline:auto}
-  .hero .lead{margin-inline:auto}
+  /* topo no celular: título em cima, o salão e o espelho no meio, texto e botões embaixo */
+  .hero{min-height:100svh;align-items:stretch}
+  .hero::after{background:linear-gradient(180deg,rgba(11,11,11,.9) 0%,rgba(11,11,11,.35) 20%,rgba(11,11,11,0) 40%,rgba(11,11,11,0) 55%,rgba(11,11,11,.7) 74%,var(--bg) 94%)}
+  .hero .wrap{display:flex;padding-block:calc(var(--topo) + 1.4rem) 1.6rem}
+  .hero-txt{display:flex;flex-direction:column;width:100%;margin-inline:auto}
+  .hero h1{font-size:calc((100vw - 2.5rem) / 10.2);white-space:nowrap}
+  .hero .lead{margin:auto auto 0;font-size:.94rem;line-height:1.55;max-width:30rem}
+  .hero .acoes{margin-top:1.3rem}
   .acoes{flex-direction:column;align-items:stretch;max-width:420px;margin-inline:auto}
   .numeros .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .num{padding:1.6rem .8rem;border-left:0}
@@ -288,29 +302,45 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .cartao{width:72vw;scroll-snap-align:center}
   .metodo-cab{grid-template-columns:1fr;gap:1.2rem}
   .metodo-cab .lead{margin-inline:auto}
-  .passos{grid-template-columns:1fr;gap:2rem}
-  .passos::before,.passos::after{display:none}
-  .passo .n{margin-inline:auto}
-  .passo p{max-width:30rem;margin-inline:auto}
-  .rosto{grid-template-columns:1fr;text-align:center}
-  .formatos{justify-content:center}
-  .nota-rosto{border-left:0;border-top:2px solid var(--amarelo);padding:.9rem 0 0}
+  /* passos no celular: número à esquerda, texto ao lado e a linha descendo com a rolagem */
+  .passos{grid-template-columns:1fr;gap:1.6rem;text-align:left}
+  .passos::before,.passos::after{left:27px;right:auto;top:27px;bottom:27px;width:1px;height:auto}
+  .passos::after{transform-origin:top;transform:scaleY(var(--p,1))}
+  .passo{display:grid;grid-template-columns:54px 1fr;column-gap:1.1rem;align-items:start}
+  .passo .n{grid-row:span 2}
+  .passo h3{margin-top:.65rem}
+  .rosto{grid-template-columns:1fr;grid-template-areas:"tit" "chips" "des" "dica" "nota";text-align:center;padding:1.5rem 1.1rem}
+  .rosto h3{font-size:1.6rem}
+  .rosto .desenho{max-width:280px;margin-top:1rem}
+  .dica-rosto{min-height:0}
+  .formatos{grid-template-columns:repeat(4,auto);justify-content:center;gap:.35rem}
+  .formatos button{padding:.45em .62em;font-size:.76rem}
+
   .serv{grid-template-columns:1fr;text-align:center;justify-items:center;top:calc(var(--topo) + 1rem + var(--i)*10px)}
   .serv .circ{display:none}
   .serv p{margin-inline:auto}
   .fundador .wrap{grid-template-columns:1fr}
+  .fundador{text-align:left}
   .retrato{height:min(118vw,560px);min-height:0}
-  .fundador .lead{margin-inline:auto}
-  .linha-tempo{text-align:left;max-width:30rem;margin-inline:auto}
-  .pessoa{grid-template-columns:1fr;gap:.3rem;justify-items:center}
+  .linha-tempo{max-width:30rem}
+  /* equipe compacta: nome e função à esquerda, @ à direita */
+  .equipe{text-align:left}
+  .pessoa{grid-template-columns:1fr auto;grid-template-areas:"nome arroba" "papel arroba";gap:.1rem .8rem;padding-block:.85rem}
+  .pessoa b{grid-area:nome;font-size:1.3rem}
+  .pessoa span{grid-area:papel;font-size:.85rem}
+  .pessoa em{grid-area:arroba;font-size:.78rem;padding:.35em .7em}
   .pessoa:hover{padding-left:0}
   .bolha{display:none}
-  .lojas{grid-template-columns:1fr}
-  .loja{min-height:0}
+  /* unidades em carrossel, mostrando um pedaço da próxima */
+  .lojas{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.9rem;margin-inline:calc(-1*var(--gut));padding:0 var(--gut) .6rem;scrollbar-width:none}
+  .lojas::-webkit-scrollbar{display:none}
+  .loja{flex:0 0 80vw;min-height:0;scroll-snap-align:center}
+  .loja .foto{height:200px}
   .rodape .wrap{grid-template-columns:1fr;text-align:center}
   .rodape .marca{margin-inline:auto}
 }
 @media (max-width:420px){.btn{padding:1em 1.25em;font-size:.94rem}}
+@media (max-width:379px){.rosto .formatos{display:flex;flex-wrap:wrap}}
 @media (prefers-reduced-motion:reduce){
   .trilho{animation:none!important}
   .js.rv-pronto .rv:not(.in){opacity:1;transform:none}
@@ -350,8 +380,8 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
     </div>
     <div class="wrap">
       <div class="hero-txt">
-        <h1 id="h-hero">Antes de você falar, sua imagem <b>já falou</b></h1>
-        <p class="lead">Visagismo masculino com método próprio: a gente entende seu rosto, sua rotina e o jeito como você quer ser visto antes de pegar a tesoura. São 4 unidades, em São Paulo e Uberlândia.</p>
+        <h1 id="h-hero"><span>Antes de você falar,</span> <span>sua imagem já falou</span></h1>
+        <p class="lead">Visagismo masculino com método próprio: entendemos seu rosto, sua rotina e como você quer ser visto antes de pegar a tesoura. São 4 unidades em São Paulo e Uberlândia.</p>
         <div class="acoes" id="acoes-hero">
           <a class="btn btn-am" href="obrigado.html?c=hero"><!--WA-->Agendar minha experiência</a>
           <a class="btn btn-vidro" href="#clientes">Ver quem já sentou aqui</a>
@@ -385,19 +415,20 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
           <button class="cartao" data-ig="reel/DMfqsHaxG1D"><img src="/assets/img/cliente-arthur-aguiar.webp" width="640" height="800" loading="lazy" decoding="async" alt="Arthur Aguiar na Marco Barbearia"><span class="play"><!--PLAY--></span><span class="quem"><b>Arthur Aguiar</b><span>Ator e empresário, 4 meses de projeto de imagem</span></span></button>
           <button class="cartao" data-ig="reel/De6xBOzhW5j"><img src="/assets/img/cliente-arthur-melo.webp" width="640" height="800" loading="lazy" decoding="async" alt="Arthur Melo, jogador do Santos, ao lado do Marco Túlio"><span class="play"><!--PLAY--></span><span class="quem"><b>Arthur Melo</b><span>Meio-campista do Santos, ex-Barcelona e seleção brasileira</span></span></button>
           <button class="cartao" data-ig="reel/DCzyO52Jr_M"><img src="/assets/img/cliente-bruno.webp" width="640" height="800" loading="lazy" decoding="async" alt="Bruno, da dupla Bruno e Marrone, na Marco Barbearia"><span class="play"><!--PLAY--></span><span class="quem"><b>Bruno</b><span>Da dupla Bruno &amp; Marrone</span></span></button>
-          <button class="cartao texto" data-ig="p/DOpYHbjDcAW"><span class="circ"></span><span class="play"><!--PLAY--></span><span class="grande">Diego Hypólito</span><span>Medalhista olímpico</span></button>
+          <button class="cartao" data-ig="p/DOpYHbjDcAW"><img src="/assets/img/cliente-diego-hypolito.webp" width="640" height="800" loading="lazy" decoding="async" alt="Diego Hypólito, medalhista olímpico, com o barbeiro Thulio Laureano"><span class="play"><!--PLAY--></span><span class="quem"><b>Diego Hypólito</b><span>Medalhista olímpico</span></span></button>
           <button class="cartao" data-ig="reel/DEGLqcyxIoO"><img src="/assets/img/cliente-gabriel-brazao.webp" width="640" height="800" loading="lazy" decoding="async" alt="Gabriel Brazão, goleiro, na Marco Barbearia"><span class="play"><!--PLAY--></span><span class="quem"><b>Gabriel Brazão</b><span>Goleiro do Santos</span></span></button>
-          <button class="cartao texto" data-ig="reel/DdkGRImOGmh"><span class="circ"></span><span class="play"><!--PLAY--></span><span class="grande">Léo Chaves</span><span>Cantor, da antiga dupla Victor &amp; Leo</span></button>
+          <button class="cartao" data-ig="reel/DdJ6_LrBvvD"><img src="/assets/img/cliente-leo-chaves.webp" width="640" height="800" loading="lazy" decoding="async" alt="Léo Chaves na cadeira da Marco Barbearia"><span class="play"><!--PLAY--></span><span class="quem"><b>Léo Chaves</b><span>Cantor, da antiga dupla Victor &amp; Leo</span></span></button>
           <button class="cartao" data-ig="reel/DdWyMlPhCJr"><img src="/assets/img/cliente-enzo-rabelo.webp" width="640" height="800" loading="lazy" decoding="async" alt="Enzo Rabelo na Marco Barbearia"><span class="play"><!--PLAY--></span><span class="quem"><b>Enzo Rabelo</b><span>Cantor</span></span></button>
-          <button class="cartao texto" data-ig="reel/DPMMJxdkbvR"><span class="circ"></span><span class="play"><!--PLAY--></span><span class="grande">Dedé Santana</span><span>Dos Trapalhões</span></button>
+          <button class="cartao" data-ig="reel/DO1DDu9DfYZ"><img src="/assets/img/cliente-dede-santana.webp" width="640" height="800" loading="lazy" decoding="async" alt="Dedé Santana com o barbeiro Thulio Laureano"><span class="play"><!--PLAY--></span><span class="quem"><b>Dedé Santana</b><span>Dos Trapalhões</span></span></button>
           <div class="cartao"><img src="/assets/img/cliente-leo-foguete.webp" width="640" height="800" loading="lazy" decoding="async" alt="Leo Foguete na Marco Barbearia"><span class="quem"><b>Leo Foguete</b><span>Cantor</span></span></div>
-          <button class="cartao texto" data-ig="reel/Da1AW8RPZmO"><span class="circ"></span><span class="play"><!--PLAY--></span><span class="grande">André Baran</span><span>Já foi número 1 do mundo no beach tennis</span></button>
+          <button class="cartao" data-ig="reel/Da1AW8RPZmO"><img src="/assets/img/cliente-andre-baran.webp" width="640" height="800" loading="lazy" decoding="async" alt="André Baran na cadeira, com o barbeiro Inácio Henrique"><span class="play"><!--PLAY--></span><span class="quem"><b>André Baran</b><span>Já foi número 1 do mundo no beach tennis</span></span></button>
           <div class="cartao"><img src="/assets/img/cliente-victor-hugo.webp" width="640" height="800" loading="lazy" decoding="async" alt="Victor Hugo, da dupla Diego e Victor Hugo, na Marco Barbearia"><span class="quem"><b>Victor Hugo</b><span>Da dupla Diego &amp; Victor Hugo</span></span></div>
-          <button class="cartao texto" data-ig="reel/DWZasvaEx5h"><span class="circ"></span><span class="play"><!--PLAY--></span><span class="grande">Augusto Cury</span><span>Escritor</span></button>
-          <button class="cartao texto" data-ig="reel/DRruSlZDIUC"><span class="circ"></span><span class="play"><!--PLAY--></span><span class="grande">Felipe Pezzoni</span><span>Vocalista da Banda Eva</span></button>
+          <button class="cartao" data-ig="reel/DWZasvaEx5h"><img src="/assets/img/cliente-augusto-cury.webp" width="640" height="800" loading="lazy" decoding="async" alt="Augusto Cury ao lado do Marco Túlio"><span class="play"><!--PLAY--></span><span class="quem"><b>Augusto Cury</b><span>Escritor</span></span></button>
+          <button class="cartao" data-ig="p/DRxTmqKj5k8"><img src="/assets/img/cliente-felipe-pezzoni.webp" width="640" height="800" loading="lazy" decoding="async" alt="Marco Túlio cuidando do visual de Felipe Pezzoni"><span class="play"><!--PLAY--></span><span class="quem"><b>Felipe Pezzoni</b><span>Vocalista da Banda Eva</span></span></button>
         </div>
       </div>
     </div>
+    <div class="cta-meio"><a class="btn btn-am" href="obrigado.html?c=clientes"><!--WA-->Agendar pelo WhatsApp</a></div>
   </section>
 
   <section class="metodo" id="metodo" aria-labelledby="h-metodo">
@@ -414,12 +445,8 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
       </ol>
 
       <div class="rosto rv" id="rosto">
-        <div>
-          <h3>Qual é o formato do seu rosto?</h3>
-          <div class="formatos" role="group" aria-label="Formatos de rosto" id="formatos"></div>
-          <div class="dica-rosto" id="dica-rosto" aria-live="polite"></div>
-          <p class="nota-rosto">Isso é só o ponto de partida. A análise de verdade considera também o tipo de cabelo, a rotina e a personalidade, e acontece na conversa antes do corte.</p>
-        </div>
+        <h3>Qual é o formato do seu rosto?</h3>
+        <div class="formatos" role="group" aria-label="Formatos de rosto" id="formatos"></div>
         <div class="desenho">
           <svg viewBox="-260 -260 520 520" aria-hidden="true">
             <circle class="halo" r="246"/>
@@ -429,13 +456,16 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
             <line class="guia" id="g2" x1="-230" x2="230"/>
             <line class="guia" id="g3" x1="-230" x2="230"/>
             <path class="face" id="face"/>
-            <path class="traco" id="sobr"/>
+            <path class="traco" id="tracos"/>
             <line class="medida" id="m1"/><line class="medida" id="m2"/><line class="medida" id="m3"/>
             <text id="t1" text-anchor="start">TESTA</text><text id="t2" text-anchor="start">MAÇÃS</text><text id="t3" text-anchor="start">MANDÍBULA</text>
           </svg>
         </div>
+        <div class="dica-rosto" id="dica-rosto" aria-live="polite"></div>
+        <p class="nota-rosto">* Isso é só o ponto de partida. A análise de verdade considera também o tipo de cabelo, a rotina e a personalidade, e acontece na conversa antes do corte.</p>
       </div>
     </div>
+    <div class="cta-meio"><a class="btn btn-am" href="obrigado.html?c=metodo"><!--WA-->Agendar pelo WhatsApp</a></div>
   </section>
 
   <section class="servicos" aria-labelledby="h-serv">
@@ -457,7 +487,7 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
       <figure class="retrato rv"><img src="/assets/img/marco-tulio-recorte.webp" width="820" height="1740" loading="lazy" decoding="async" alt="Marco Túlio Fernandes, fundador da Marco Barbearia, sentado num banco"></figure>
       <div>
         <h2 id="h-fund" class="rv">De R$ 5 no fundo de casa a <b>4 unidades</b></h2>
-        <p class="lead rv" style="--d:.1s">O Marco Túlio Fernandes começou no futebol, cortando cabelo dentro de alojamentos com uma máquina, uma Mobilete e muita coragem, e em 2014 já atendia no fundo da casa dos pais por R$ 5. Hoje ele é empresário e barbeiro visagista, forma outros barbeiros e tem mais de 101 mil pessoas acompanhando o trabalho dele.</p>
+        <p class="lead rv" style="--d:.1s">O Marco Túlio começou cortando cabelo em alojamentos de futebol. Hoje é empresário, barbeiro visagista e forma outros barbeiros.</p>
         <ol class="linha-tempo" id="linha-tempo">
           <li class="marco"><b>Início</b><span>Cortes dentro de alojamentos de futebol, com uma máquina na mão.</span></li>
           <li class="marco"><b>2014</b><span>Atendimento no fundo da casa dos pais, a R$ 5.</span></li>
@@ -470,6 +500,7 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
         </ol>
       </div>
     </div>
+    <div class="cta-meio"><a class="btn btn-am" href="obrigado.html?c=fundador"><!--WA-->Agendar pelo WhatsApp</a></div>
   </section>
 
   <section class="equipe" id="equipe" aria-labelledby="h-equipe">
@@ -481,6 +512,9 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
         <li><a class="pessoa rv" href="https://www.instagram.com/amorim_vb/" target="_blank" rel="noopener"><b>Victor Amorim</b><span>Barbeiro educador</span><em>@amorim_vb</em></a></li>
         <li><a class="pessoa rv" href="https://www.instagram.com/eri_concept_/" target="_blank" rel="noopener"><b>Eri</b><span>Visagista</span><em>@eri_concept_</em></a></li>
         <li><a class="pessoa rv" href="https://www.instagram.com/inaciooxp/" target="_blank" rel="noopener"><b>Inácio Henrique</b><span>Visagista</span><em>@inaciooxp</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/jennyvisagista/" target="_blank" rel="noopener"><b>Jenny Moura</b><span>Visagista</span><em>@jennyvisagista</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/_weslley.oliveeira/" target="_blank" rel="noopener"><b>Weslley Oliveira</b><span>Especialista em cabelo crespo e cacheado</span><em>@_weslley.oliveeira</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/gleyfersonn/" target="_blank" rel="noopener"><b>Gleyferson</b><span>Barbeiro</span><em>@gleyfersonn</em></a></li>
       </ul>
     </div>
     <span class="bolha" id="bolha" aria-hidden="true"></span>
