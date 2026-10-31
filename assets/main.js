@@ -8,27 +8,27 @@
   const lim = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const sai = t => 1 - Math.pow(1 - t, 3);
 
-  /* ---------- espelho do topo: a cor aparece dentro do aro ---------- */
+  /* ---------- espelho do topo (só no computador): a cor aparece dentro do aro ---------- */
   const hero = $('#hero'), foto = $('.hero-foto');
   let alvo = null, pos = null, raio = 0, ultimoMouse = 0, heroNaTela = true, t0 = performance.now();
-  const raioAlvo = () => desktop() ? Math.max(120, Math.min(230, innerWidth * .15)) : Math.max(96, innerWidth * .28);
+  const raioAlvo = () => Math.max(120, Math.min(230, innerWidth * .15));
   const centro = () => {
-    const r = hero.getBoundingClientRect();
-    return desktop() ? { x: r.width * .76, y: r.height * .42 } : { x: r.width * .5, y: r.height * .47 };
+    const r = foto.getBoundingClientRect();
+    return { x: r.width * .76, y: r.height * .42 };
   };
   if (hero && foto && !reduz) {
     pos = centro(); alvo = { ...pos };
     hero.addEventListener('pointermove', e => {
       if (e.pointerType !== 'mouse') return;
-      const r = hero.getBoundingClientRect();
+      const r = foto.getBoundingClientRect();
       alvo = { x: e.clientX - r.left, y: e.clientY - r.top }; ultimoMouse = performance.now();
     });
     const quadro = agora => {
-      if (heroNaTela) {
-        const r = hero.getBoundingClientRect();
+      if (heroNaTela && desktop()) {
+        const r = foto.getBoundingClientRect();
         if (agora - ultimoMouse > 2500) {           // sem mouse: o espelho passeia devagar
           const c = centro(), t = (agora - t0) / 1000;
-          alvo = { x: c.x + Math.sin(t * .32) * r.width * (desktop() ? .12 : .16), y: c.y + Math.sin(t * .47) * r.height * (desktop() ? .1 : .05) };
+          alvo = { x: c.x + Math.sin(t * .32) * r.width * .12, y: c.y + Math.sin(t * .47) * r.height * .1 };
         }
         pos.x += (alvo.x - pos.x) * .08; pos.y += (alvo.y - pos.y) * .08;
         raio += (raioAlvo() - raio) * .06;
@@ -76,7 +76,7 @@
   if (face) {
     const caminho = pts => 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L') + 'Z';
     const lista = $('#formatos'), dica = $('#dica-rosto');
-    lista.innerHTML = FORMATOS.map(([id, nome], i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${nome}</button>`).join('');
+    lista.innerHTML = FORMATOS.map(([id, nome], i) => (i === 4 ? '<span class="quebra" aria-hidden="true"></span>' : '') + `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${nome}</button>`).join('');
     let atual = pontos(FORMATOS[0]);
     const pinta = f => {
       face.setAttribute('d', caminho(f.pts));

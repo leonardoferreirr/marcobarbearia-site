@@ -165,6 +165,7 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .rosto .nota-rosto{grid-area:nota}
 .rosto h3{font-weight:300;font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.1;letter-spacing:-.02em}
 .formatos{display:grid;grid-template-columns:repeat(4,max-content);gap:.5rem;margin-top:1.4rem}
+.formatos .quebra{display:none}
 .formatos button{padding:.55em 1.1em;border:1px solid var(--linha);border-radius:999px;font-size:.92rem;color:var(--suave);transition:all .3s var(--ease)}
 .formatos button:hover{color:var(--texto);border-color:rgba(255,255,255,.45)}
 .formatos button[aria-pressed="true"]{background:var(--amarelo);color:var(--tinta);border-color:var(--amarelo)}
@@ -212,11 +213,11 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
 .marco span{color:var(--suave)}
 
 /* equipe */
-.equipe{padding-block:clamp(4rem,8vw,7rem);position:relative}
-.time{margin-top:clamp(2rem,4vw,3rem);border-top:1px solid var(--linha)}
-.pessoa{position:relative;display:grid;grid-template-columns:1.2fr 1fr auto;gap:1.5rem;align-items:center;padding-block:1.4rem;border-bottom:1px solid var(--linha);transition:padding .5s var(--ease)}
+.equipe{padding-block:clamp(3.5rem,6vw,5rem);position:relative}
+.time{margin-top:clamp(1.4rem,3vw,2.2rem);border-top:1px solid var(--linha)}
+.pessoa{position:relative;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding-block:.75rem;border-bottom:1px solid var(--linha);transition:padding .5s var(--ease)}
 .pessoa:hover{padding-left:1rem}
-.pessoa b{font-weight:300;font-size:clamp(1.6rem,3.4vw,3rem);letter-spacing:-.02em;line-height:1.1;transition:color .4s}
+.pessoa b{font-weight:300;font-size:clamp(1.4rem,2.3vw,2.1rem);letter-spacing:-.02em;line-height:1.15;transition:color .4s}
 .pessoa:hover b{color:var(--amarelo)}
 .pessoa span{color:var(--suave)}
 .pessoa em{font-style:normal;font-size:.9rem;color:var(--suave);border:1px solid var(--linha);border-radius:999px;padding:.4em .9em;transition:all .3s}
@@ -280,13 +281,14 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .marca{height:44px}
   .topo .btn{padding:.75em 1.05em;font-size:.86rem}
   body{text-align:center}
-  /* topo no celular: título em cima, o salão e o espelho no meio, texto e botões embaixo */
-  .hero{min-height:100svh;align-items:stretch}
-  .hero::after{background:linear-gradient(180deg,rgba(11,11,11,.9) 0%,rgba(11,11,11,.35) 20%,rgba(11,11,11,0) 40%,rgba(11,11,11,0) 55%,rgba(11,11,11,.7) 74%,var(--bg) 94%)}
-  .hero .wrap{display:flex;padding-block:calc(var(--topo) + 1.4rem) 1.6rem}
+  /* topo no celular: sem espelho, o salão em cor e o texto embaixo sobre um degradê preto */
+  .hero-foto .base{filter:none}
+  .lente,.anel{display:none}
+  .hero::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(11,11,11,.94) 24%,rgba(11,11,11,.7) 44%,rgba(11,11,11,0) 66%),linear-gradient(180deg,rgba(11,11,11,.6) 0%,rgba(11,11,11,0) 16%)}
+  .hero .wrap{padding-block:calc(var(--topo) + 2rem) 2rem}
   .hero-txt{display:flex;flex-direction:column;width:100%;margin-inline:auto}
   .hero h1{font-size:calc((100vw - 2.5rem) / 10.5);white-space:nowrap}
-  .hero .lead{margin:auto auto 0;font-size:.94rem;line-height:1.55;max-width:30rem}
+  .hero .lead{margin:1.1rem auto 0;font-size:.94rem;line-height:1.55;max-width:30rem}
   .hero .acoes{margin-top:1.3rem}
   .acoes{flex-direction:column;align-items:stretch;max-width:420px;margin-inline:auto}
   .numeros .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
@@ -314,7 +316,8 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .rosto h3{font-size:1.6rem}
   .rosto .desenho{max-width:280px;margin-top:1rem}
   .dica-rosto{min-height:0}
-  .formatos{grid-template-columns:repeat(4,auto);justify-content:center;gap:.35rem}
+  .formatos{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem}
+  .formatos .quebra{display:block;flex-basis:100%;height:0}
   .formatos button{padding:.45em .62em;font-size:.76rem}
 
   .serv{grid-template-columns:1fr;text-align:center;justify-items:center;top:calc(var(--topo) + 1rem + var(--i)*10px)}
@@ -326,10 +329,9 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .linha-tempo{max-width:30rem}
   /* equipe compacta: nome e função à esquerda, @ à direita */
   .equipe{text-align:left}
-  .pessoa{grid-template-columns:1fr auto;grid-template-areas:"nome arroba" "papel arroba";gap:.1rem .8rem;padding-block:.85rem}
-  .pessoa b{grid-area:nome;font-size:1.3rem}
-  .pessoa span{grid-area:papel;font-size:.85rem}
-  .pessoa em{grid-area:arroba;font-size:.78rem;padding:.35em .7em}
+  .pessoa{grid-template-columns:1fr auto;gap:.8rem;padding-block:.75rem}
+  .pessoa b{font-size:1.25rem}
+  .pessoa em{font-size:.78rem;padding:.35em .7em}
   .pessoa:hover{padding-left:0}
   .bolha{display:none}
   /* unidades em carrossel, mostrando um pedaço da próxima */
@@ -341,7 +343,6 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
   .rodape .marca{margin-inline:auto}
 }
 @media (max-width:420px){.btn{padding:1em 1.25em;font-size:.94rem}}
-@media (max-width:379px){.rosto .formatos{display:flex;flex-wrap:wrap}}
 @media (prefers-reduced-motion:reduce){
   .trilho{animation:none!important}
   .js.rv-pronto .rv:not(.in){opacity:1;transform:none}
@@ -508,14 +509,14 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
     <div class="wrap">
       <h2 id="h-equipe" class="rv">Quem cuida da <b>sua imagem</b></h2>
       <ul class="time" id="time">
-        <li><a class="pessoa rv" href="https://www.instagram.com/marcovisagismo/" target="_blank" rel="noopener"><b>Marco Túlio</b><span>Fundador e barbeiro visagista</span><em>@marcovisagismo</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/thuliolaureano/" target="_blank" rel="noopener"><b>Thulio Laureano</b><span>Visagista</span><em>@thuliolaureano</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/amorim_vb/" target="_blank" rel="noopener"><b>Victor Amorim</b><span>Barbeiro educador</span><em>@amorim_vb</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/eri_concept_/" target="_blank" rel="noopener"><b>Eri</b><span>Visagista</span><em>@eri_concept_</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/inaciooxp/" target="_blank" rel="noopener"><b>Inácio Henrique</b><span>Visagista</span><em>@inaciooxp</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/jennyvisagista/" target="_blank" rel="noopener"><b>Jenny Moura</b><span>Visagista</span><em>@jennyvisagista</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/_weslley.oliveeira/" target="_blank" rel="noopener"><b>Weslley Oliveira</b><span>Especialista em cabelo crespo e cacheado</span><em>@_weslley.oliveeira</em></a></li>
-        <li><a class="pessoa rv" href="https://www.instagram.com/gleyfersonn/" target="_blank" rel="noopener"><b>Gleyferson</b><span>Barbeiro</span><em>@gleyfersonn</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/marcovisagismo/" target="_blank" rel="noopener"><b>Marco Túlio</b><em>@marcovisagismo</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/thuliolaureano/" target="_blank" rel="noopener"><b>Thulio Laureano</b><em>@thuliolaureano</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/amorim_vb/" target="_blank" rel="noopener"><b>Victor Amorim</b><em>@amorim_vb</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/eri_concept_/" target="_blank" rel="noopener"><b>Eri</b><em>@eri_concept_</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/inaciooxp/" target="_blank" rel="noopener"><b>Inácio Henrique</b><em>@inaciooxp</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/jennyvisagista/" target="_blank" rel="noopener"><b>Jenny Moura</b><em>@jennyvisagista</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/_weslley.oliveeira/" target="_blank" rel="noopener"><b>Weslley Oliveira</b><em>@_weslley.oliveeira</em></a></li>
+        <li><a class="pessoa rv" href="https://www.instagram.com/gleyfersonn/" target="_blank" rel="noopener"><b>Gleyferson</b><em>@gleyfersonn</em></a></li>
       </ul>
     </div>
     <span class="bolha" id="bolha" aria-hidden="true"></span>
@@ -525,16 +526,16 @@ h1 b,h2 b{font-weight:500;color:var(--amarelo)}
     <div class="wrap">
       <h2 id="h-unid" class="rv">Escolha a unidade <b>mais perto de você</b></h2>
       <div class="lojas">
-        <article class="loja rv"><div class="foto"><img src="/assets/img/unidade-vinhedos.webp" width="900" height="1216" loading="lazy" decoding="async" alt="Recepção da unidade Vinhedos com vista pela janela"></div>
+        <article class="loja rv"><div class="foto"><img src="/assets/img/unidade-vinhedos-v2.webp" width="900" height="506" loading="lazy" decoding="async" alt="Salão da unidade Vinhedos com luz do pôr do sol"></div>
           <div class="info"><span class="cidade">UBERLÂNDIA, MG</span><h3>Vinhedos</h3><p>Av. dos Vinhedos, 70, sala 210, Jardim Karaíba</p>
           <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=vinhedos"><!--WA-->Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+dos+Vinhedos,+70,+Uberl%C3%A2ndia+MG" target="_blank" rel="noopener">Como chegar</a></div></div></article>
-        <article class="loja rv" style="--d:.08s"><div class="foto"><img src="/assets/img/unidade-container.webp" width="900" height="1216" loading="lazy" decoding="async" alt="Cadeiras de lavatório da unidade Container"></div>
+        <article class="loja rv" style="--d:.08s"><div class="foto"><img src="/assets/img/unidade-container-v2.webp" width="765" height="1020" loading="lazy" decoding="async" alt="Cadeira e espelhos redondos iluminados da unidade Container"></div>
           <div class="info"><span class="cidade">UBERLÂNDIA, MG</span><h3>Container</h3><p>Rua Rafael Marino Neto, 180, Jardim Karaíba</p>
           <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=container"><!--WA-->Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Rafael+Marino+Neto,+180,+Uberl%C3%A2ndia+MG" target="_blank" rel="noopener">Como chegar</a></div></div></article>
-        <article class="loja rv" style="--d:.16s"><div class="foto vazia" aria-hidden="true"><i></i></div>
+        <article class="loja rv" style="--d:.16s"><div class="foto"><img src="/assets/img/unidade-brooklin.webp" width="790" height="550" loading="lazy" decoding="async" alt="Espelhos ovais iluminados da unidade Brooklin"></div>
           <div class="info"><span class="cidade">SÃO PAULO, SP</span><h3>Brooklin</h3><p>Rua Pitu, 72, Brooklin</p>
           <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=brooklin"><!--WA-->Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Pitu,+72,+Brooklin,+S%C3%A3o+Paulo+SP" target="_blank" rel="noopener">Como chegar</a></div></div></article>
-        <article class="loja rv" style="--d:.24s"><div class="foto vazia" aria-hidden="true"><i></i></div>
+        <article class="loja rv" style="--d:.24s"><div class="foto"><img src="/assets/img/unidade-ironbarber.webp" width="900" height="506" loading="lazy" decoding="async" alt="Cadeiras da IronBarber by Marco com a academia Ironberg ao fundo"></div>
           <div class="info"><span class="cidade">SÃO PAULO, SP</span><h3>IronBarber by Marco</h3><p>Dentro da Academia Ironberg, na Barra Funda</p>
           <div class="acoes"><a class="btn btn-am" href="obrigado.html?c=ironbarber"><!--WA-->Agendar nesta unidade</a><a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Ironberg+Barra+Funda+S%C3%A3o+Paulo" target="_blank" rel="noopener">Como chegar</a></div></div></article>
       </div>
